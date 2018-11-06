@@ -1,6 +1,6 @@
 # ARkit2.0-Tutorial
 
-ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히고 다양하게 활용학 위해 개인스터디르 진행합니다.
+ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히고 다양한 방면으로 활용하기 위해 개인 스터디를 진행합니다.
 <br><br>
 
 ## 현재진행상황
