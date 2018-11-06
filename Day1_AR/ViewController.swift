@@ -30,6 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
         
         createShapes()
+        addLights()
     }
     
     func createShapes() {
@@ -42,6 +43,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //pyramidNode.position.x 는 좌우 방향 조절
         // pyramidNode.position.y 는 위 아래 방향 조절
         // 0 0 0 의 root 노드
+        //scene에 SCNNode 추가
         sceneView.scene.rootNode.addChildNode(pyramidNode)
         
         let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0) //chamferRadius = 모서리 경사진 정도
@@ -55,6 +57,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3Make(0.5, 0, -0.8)// 오른쪽 50센치 뒤로 80 센치 떨어진 곳에 벡터값 설정
         sceneView.scene.rootNode.addChildNode(sphereNode)
+        
+    }
+    // Lights Settings Method
+    func addLights() {
+        //방향 변수 설정
+        let directional = SCNLight()
+        directional.type = .directional
+        let directionalNode = SCNNode()
+        directionalNode.light = directional
+        directionalNode.eulerAngles.x = -.pi/4
+        sceneView.scene.rootNode.addChildNode(directionalNode)
+        
+        let ambient = SCNLight()
+        ambient.type = .ambient
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = ambient
+        //literal 값으로 색상 설정
+        let color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        ambient.color = color
+        sceneView.scene.rootNode.addChildNode(ambientLightNode)
         
     }
     
