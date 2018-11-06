@@ -24,10 +24,38 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        createShapes()
+    }
+    
+    func createShapes() {
+        //createNode
+        let pyramid = SCNPyramid(width: 0.2, height: 0.2, length: 0.2) // m 단위
+        pyramid.firstMaterial?.diffuse.contents = UIColor.green // color 설정
+        let pyramidNode = SCNNode(geometry: pyramid)
+        //최초 생성 position 설정
+        pyramidNode.position.z = -0.8 //사용자 앞에 80cm 떨어진 곳에 생성
+        //pyramidNode.position.x 는 좌우 방향 조절
+        // pyramidNode.position.y 는 위 아래 방향 조절
+        // 0 0 0 의 root 노드
+        sceneView.scene.rootNode.addChildNode(pyramidNode)
+        
+        let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0) //chamferRadius = 모서리 경사진 정도
+        box.firstMaterial?.diffuse.contents = UIColor.yellow
+        let boxNode = SCNNode(geometry: box)
+        boxNode.position =  SCNVector3Make(-0.5, 0, -0.8) // 왼쪽  50센치 뒤로 80센치 떨어진 곳에 벡터값 설정
+        sceneView.scene.rootNode.addChildNode(boxNode)
+        
+        let sphere = SCNSphere(radius: 0.15)
+        sphere.firstMaterial?.diffuse.contents = UIColor.red
+        let sphereNode = SCNNode(geometry: sphere)
+        sphereNode.position = SCNVector3Make(0.5, 0, -0.8)// 오른쪽 50센치 뒤로 80 센치 떨어진 곳에 벡터값 설정
+        sceneView.scene.rootNode.addChildNode(sphereNode)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
