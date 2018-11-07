@@ -6,4 +6,25 @@
 //  Copyright © 2018 youngjun goo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Planet {
+    
+    var name: String
+    var radius: CGFloat
+    var rotation: CGFloat
+    var color: UIColor
+    var sunDistance: Float
+    
+    init(name: String, radius: CGFloat, rotation: CGFloat, color: UIColor, sunDistance: Float) {
+        
+        self.name = name
+        self.radius = radius
+        self.rotation = rotation
+        self.color = color
+        self.sunDistance = sunDistance
+        
+    }
+    
+    
+}
