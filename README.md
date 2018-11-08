@@ -19,6 +19,15 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - Plane Detection (vertical, horizontal)
 - renderer method 에서 plane 생성
 - euler = -90 이 평면 plane의 경사 정도를 나타내는 값
+- let planeAnchor = ARPlaneAnchor : AR detecting에 감지된 실제으 평면에 대한 위치 정보
+- planeAnchor.extent AR로 추적한 실제 평면의 예상 넓이와 길이르 저장 하는 프로펕
+- center : Anchor 기준으로 하 실제 평면의 중심 
+- planeNode?.position = SCNVector3Make(center.x, 0, center.z)  평면의 벡터값 설정
+- Shadow 적용 법 plane 위에 directional light 설정후 casts shadow 설정 (false)
+- renderingOrder = -1 설정으로 지정한 node의 순서를 지정 렌더링 순서 크면으 마지막으로 렌더링 된다.
+- planeGeometry.firstMaterial?.isDoubleSided SceneKit이 plane을 detecting 시에 양면을 detecting을 해야하는지 여부 설정
+
+
 
 
 
