@@ -17,6 +17,9 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 
 ### Day3
 - Plane Detection (vertical, horizontal)
+- renderer method 에서 plane 생성
+- euler = -90 이 평면 plane의 경사 정도를 나타내는 값
+
 
 
 ## 스터디 방향
@@ -25,5 +28,10 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - Image Tracking
 - Word Tracking
 - Motion Tracking
+
+## 도전해볼 거
+
+- 사용자 몸을 Detecting 후 간단한 의상을 입혀보기
+- 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
 
 
