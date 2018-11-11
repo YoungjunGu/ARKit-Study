@@ -28,9 +28,14 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - planeGeometry.firstMaterial?.isDoubleSided SceneKit이 plane을 detecting 시에 양면을 detecting을 해야하는지 여부 설정
 
 ### Day4
-- Metal이란? Apple OS앱의 그래픽작업으로 위해 그래픽 처리장치(GPU)에 직접적으 접근하여 다양한 기능을제공하는 렌더링
+- Metal이란? Apple OS앱의 그래픽작업을 위해 그래픽 처리장치(GPU)에 직접적으로 접근하여 다양한 기능을 제공하는 렌더링
   Metal 2는 GPU가 그래픽 파이프라인을 더 강력히 제어하고, 신경망 훈련을 가속(Metal Performance Shader(MPS), 셰이더 코드를 깊이 통찰등에 장점들을 가진다.
 - Plane Detection을 위해 MTLCreateSystemDefaultDevice를 사용 하여 지속적으로 planeGeometry를 update 하여 실제 평면을 빠르게 감지하여 update 하는것을 볼 수 있었다.
+
+### Day5
+- PlaneDetection 마지막 "바닥에 위험한 구멍을 내보자"
+- 3개의 Tube 를 활용하여 lib(입구), Darkness(구멍 속) , occlussion(외부에 안보이게 튜브를 클로킹하기 위한 tube)
+- 중복을 막기 위해 boolean 프로퍼티로 제어하자  
 
 
 
@@ -45,5 +50,5 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 
 - 사용자 몸을 Detecting 후 간단한 의상을 입혀보기
 - 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
-
+- 사물을 Detecting 하여 상황에 맞느 AR 적용 
 
