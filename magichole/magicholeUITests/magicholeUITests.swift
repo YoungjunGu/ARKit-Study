@@ -1,14 +1,14 @@
 //
-//  PlaneDetectionUITests.swift
-//  PlaneDetectionUITests
+//  magicholeUITests.swift
+//  magicholeUITests
 //
-//  Created by youngjun goo on 08/11/2018.
+//  Created by youngjun goo on 11/11/2018.
 //  Copyright © 2018 youngjun goo. All rights reserved.
 //
 
 import XCTest
 
-class PlaneDetectionUITests: XCTestCase {
+class magicholeUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
