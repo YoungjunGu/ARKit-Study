@@ -37,6 +37,11 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - 3개의 Tube 를 활용하여 lib(입구), Darkness(구멍 속) , occlussion(외부에 안보이게 튜브를 클로킹하기 위한 tube)
 - 중복을 막기 위해 boolean 프로퍼티로 제어하자  
 
+### Day6(Image Detecting)
+- AVSpeechSynthesizer() : iOS에서 사용되는 Text-to_Speech 방식 , 텍스트를 siri 음성으로 speech 해준다.
+- 사용방법: AVSppechSynthesizer() ,AVSpeechUtterance() 프로퍼티 생성 후 Utterance 프로퍼티로 읽고 싶은 문장의 속성을 제어
+  speech.speak(utterance) 로 문장 speech 실행
+- Asset 에 등록한 이미지 를 
 
 
 ## 스터디 방향
