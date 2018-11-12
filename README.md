@@ -13,7 +13,6 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - SCNAction 사용 하여 애니메이션 추가
 - SCNLight 설정 
 - SCNPArticleSystem을 사용 하여 애니메이셔 효과 추가
-<img width = "200" src = "https://user-images.githubusercontent.com/33486820/48171750-a4608080-e340-11e8-9d61-39acded3ba29.jpeg">
 
 ### Day3
 - Plane Detection (vertical, horizontal)
