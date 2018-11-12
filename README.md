@@ -63,4 +63,10 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - 사용자 몸을 Detecting 후 간단한 의상을 입혀보기
 - 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
 - 사물을 Detecting 하여 상황에 맞느 AR 적용 
+- Image Detection과 CoreML을 활용하여 "Real Time Camera Object Detection" 제작 해보기
+
+
+
+
+
 
