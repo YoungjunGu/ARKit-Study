@@ -39,9 +39,16 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 
 ### Day6(Image Detecting)
 - AVSpeechSynthesizer() : iOS에서 사용되는 Text-to_Speech 방식 , 텍스트를 siri 음성으로 speech 해준다.
-- 사용방법: AVSppechSynthesizer() ,AVSpeechUtterance() 프로퍼티 생성 후 Utterance 프로퍼티로 읽고 싶은 문장의 속성을 제어
+- 사용방법: AVSpeechSynthesizer() ,AVSpeechUtterance() 프로퍼티 생성 후 Utterance 프로퍼티로 읽고 싶은 문장의 속성을 제어
   speech.speak(utterance) 로 문장 speech 실행
-- Asset 에 등록한 이미지 를 
+- Asset 에 등록한 이미지 를 detecting 하기위해 
+<img width="806" alt="2018-11-12 9 58 25" src="https://user-images.githubusercontent.com/33486820/48348955-298fc080-e6c6-11e8-9461-ddc15f128789.png">
+- ARImageAnchor를 사용해 등록한 asset 이미지를 감지시 정보를 넘김
+<img width="430" alt="2018-11-12 9 58 43" src="https://user-images.githubusercontent.com/33486820/48348983-3d3b2700-e6c6-11e8-9ca5-7ac83e2f3d48.png">
+- 이미지를 감지하면 AVSpeechSynthesizer()를 이용해 해당 이미지의 정보를 닮고 있는 String Array의 contents르 읽어 줌
+<img width="676" alt="2018-11-12 9 58 50" src="https://user-images.githubusercontent.com/33486820/48348991-43c99e80-e6c6-11e8-8166-19806e984e9f.png">
+
+
 
 
 ## 스터디 방향
