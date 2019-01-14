@@ -4,17 +4,17 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 <br><br>
 
 ## 현재진행상황
-### Day1
+> Day1
 - SceneKit 의 기본적인 개념
 - SCN도형 생성 후 -> SCNNode vector 값 설정 
 - addChildNode(AnyNode) 로 Scene 에 추가
 - SCNLights 를 활용해 도형에 명암 삽입
-### Day2
+> Day2
 - SCNAction 사용 하여 애니메이션 추가
 - SCNLight 설정 
 - SCNPArticleSystem을 사용 하여 애니메이셔 효과 추가
 
-### Day3
+> Day3
 - Plane Detection (vertical, horizontal)
 - renderer method 에서 plane 생성
 - euler = -90 이 평면 plane의 경사 정도를 나타내는 값
@@ -26,17 +26,17 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - renderingOrder = -1 설정으로 지정한 node의 순서를 지정 렌더링 순서 크면으 마지막으로 렌더링 된다.
 - planeGeometry.firstMaterial?.isDoubleSided SceneKit이 plane을 detecting 시에 양면을 detecting을 해야하는지 여부 설정
 
-### Day4
+> Day4
 - Metal이란? Apple OS앱의 그래픽작업을 위해 그래픽 처리장치(GPU)에 직접적으로 접근하여 다양한 기능을 제공하는 렌더링
   Metal 2는 GPU가 그래픽 파이프라인을 더 강력히 제어하고, 신경망 훈련을 가속(Metal Performance Shader(MPS), 셰이더 코드를 깊이 통찰등에 장점들을 가진다.
 - Plane Detection을 위해 MTLCreateSystemDefaultDevice를 사용 하여 지속적으로 planeGeometry를 update 하여 실제 평면을 빠르게 감지하여 update 하는것을 볼 수 있었다.
 
-### Day5
+> Day5
 - PlaneDetection 마지막 "바닥에 위험한 구멍을 내보자"
 - 3개의 Tube 를 활용하여 lib(입구), Darkness(구멍 속) , occlussion(외부에 안보이게 튜브를 클로킹하기 위한 tube)
 - 중복을 막기 위해 boolean 프로퍼티로 제어하자  
 
-### Day6(Image Detecting)
+> Day6(Image Detecting)
 - AVSpeechSynthesizer() : iOS에서 사용되는 Text-to_Speech 방식 , 텍스트를 siri 음성으로 speech 해준다.
 - 사용방법: AVSpeechSynthesizer() ,AVSpeechUtterance() 프로퍼티 생성 후 Utterance 프로퍼티로 읽고 싶은 문장의 속성을 제어
   speech.speak(utterance) 로 문장 speech 실행
