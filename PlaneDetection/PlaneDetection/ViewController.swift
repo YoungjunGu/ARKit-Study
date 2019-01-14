@@ -9,92 +9,57 @@
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
+    
+    var siri = AVSpeechSynthesizer()
+    
+    let contentFor = [
+        "Water Lily Pond" : "Water Lily Pond by Claude Monet. In 1883 Monet moved to Giverny where he lived until his death. There, on the grounds of his property, he created a water garden 'for the purpose of cultivating aquatic plants', over which he built an arched bridge in the Japanese style. In 1899, once the garden had matured, the painter undertook 17 views of the motif under differing light conditions. Surrounded by luxuriant foliage, the bridge is seen here from the pond itself, among an artful arrangement of reeds and willow leaves.",
+        "Surprised!" : "Surprised! by Henri Rousseau. This jungle scene was painted by the French artist, Henri Rousseau, in 1891, and is signed in the bottom left corner. Rousseau is now famous for his jungle scenes, although it is thought that he never actually visited a jungle – rather, he took his inspiration from trips to the Jardin des Plantes, the botanical gardens in Paris, and from prints and illustrated books. Rousseau later described the painting as representing a tiger pursuing explorers, but he may originally have intended the 'surprise' to be the sudden tropical storm breaking in the sky above the tiger. We can see long streaks of lightening, and imagine the rumble of thunder. Stripes govern the whole design, in tones of green, yellow, orange, brown and red, and the tiger is well camouflaged amongst the lush foliage.",
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        sceneView.scene = scene
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-		
-		if #available(iOS 11.3, *) {
-			configuration.planeDetection = [.horizontal, .vertical]
-		} else {
-			// ios 11.0
-			configuration.planeDetection = .horizontal
-		}
+        configuration.detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "paintings", bundle: nil)
         sceneView.session.run(configuration)
     }
-	
-	
-	func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-		//the initial torus
-//		let torus = SCNTorus(ringRadius: 0.15, pipeRadius: 0.02)
-//		torus.firstMaterial?.diffuse.contents = UIColor.blue.withAlphaComponent(0.9)
-//		node.geometry = torus
-
-		guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-		let extent = planeAnchor.extent
-
-		let plane = SCNPlane(width: CGFloat(extent.x), height: CGFloat(extent.z))
-		let planeNode = SCNNode(geometry: plane)
-		planeNode.eulerAngles.x = -.pi/2
-		planeNode.name = "arPlane"
-
-		let anchorNode = SCNScene(named: "art.scnassets/anchor.scn")!.rootNode
-		
-		//uncomment next line to see the AR Anchor!
-		//node.addChildNode(anchorNode)
-		node.addChildNode(planeNode)
-
-	}
-
-
-//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-//        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-//        let extent = planeAnchor.extent
-//
-//        let planeGeometry = SCNPlane(width: CGFloat(extent.x), height: CGFloat(extent.z))
-//        planeGeometry.firstMaterial?.colorBufferWriteMask = []
-//        planeGeometry.firstMaterial?.isDoubleSided = true
-//
-//        let planeNode = node.childNode(withName: "arPlane", recursively: false)
-//        planeNode?.castsShadow = false
-//        planeNode?.renderingOrder = -1
-//        planeNode?.geometry = planeGeometry
-//
-//        let center = planeAnchor.center
-//        planeNode?.position = SCNVector3Make(center.x, 0, center.z)
-//
-//
-//    }
-	
-	//ARSCNPlaneGeometry (Last lecture of the section on plane detection.
-	
-	
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        if #available(iOS 11.3, *) {
-            let planeGeometry = planeAnchor.geometry
-            guard let metalDevice = MTLCreateSystemDefaultDevice() else {return}
-            let plane = ARSCNPlaneGeometry(device: metalDevice)
-            plane?.update(from: planeGeometry)
-            node.geometry = plane
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let imageAnchor = anchor as? ARImageAnchor else {
+            return
         }
+        let image = imageAnchor.referenceImage
+        
+        guard let imageName = image.name, let content = contentFor[imageName] else {
+            return
+        }
+        print(imageName)
+        //Speak Contents
+        speekSentence(what: content)
+        
     }
-	
+    //MARK: -Text to Speech
+    func speekSentence(what description: String) {
+        siri.stopSpeaking(at: .immediate)
+        let content = AVSpeechUtterance(string: description)
+        siri.speak(content)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
     }
     
-	
 }
+	
