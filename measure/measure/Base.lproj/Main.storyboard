@@ -21,20 +21,12 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-sE-FGN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBz-GT-GdC">
-                                <rect key="frame" x="191" y="427.66666666666669" width="32" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Skk-sE-FGN" secondAttribute="bottom" id="5JG-fd-6fx"/>
                             <constraint firstItem="Skk-sE-FGN" firstAttribute="top" secondItem="bLU-8B-Qxj" secondAttribute="top" id="9FA-ad-Zsx"/>
                             <constraint firstItem="Skk-sE-FGN" firstAttribute="leading" secondItem="bLU-8B-Qxj" secondAttribute="leading" id="OOd-uW-K4O"/>
-                            <constraint firstItem="ZBz-GT-GdC" firstAttribute="centerY" secondItem="bLU-8B-Qxj" secondAttribute="centerY" id="XoX-X4-PDy"/>
-                            <constraint firstItem="ZBz-GT-GdC" firstAttribute="centerX" secondItem="bLU-8B-Qxj" secondAttribute="centerX" id="j24-ZY-fH6"/>
                             <constraint firstAttribute="trailing" secondItem="Skk-sE-FGN" secondAttribute="trailing" id="tcN-lj-QiA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rDw-Py-Ea8"/>
