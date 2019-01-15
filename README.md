@@ -47,6 +47,12 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - 이미지를 감지하면 AVSpeechSynthesizer()를 이용해 해당 이미지의 정보를 닮고 있는 String Array의 contents르 읽어 줌
 <img width="676" alt="2018-11-12 9 58 50" src="https://user-images.githubusercontent.com/33486820/48348991-43c99e80-e6c6-11e8-8166-19806e984e9f.png"><br>
 
+> Measure(AR 측정 앱)
+- 측정을 하기 위해 사용자의 터치를 감지해야한다 ` touchBegan() ` 를 이용하여 사용자의 터치를 감지
+- hitTest : SceneKit view의 한 지점에 해당하는 캡처 된 카메라 이미지엣 실제 객체나 AR Anchor를 검색하는 기능
+- worldTrnasform : 변환 매트릭스의 일종으로 검출되 표면과 hitTest 결과를 생성 하 포인트 사이의교점을 나타낸다.
+ hitTest는 이미지 또는 뷰의 좌표계 2D 점을 선을 따라 3D 공간을 투영 , 해당 선이 검출된 표면과 교차하는 결과를 밪환
+
 
 
 
