@@ -52,6 +52,7 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - hitTest : SceneKit view의 한 지점에 해당하는 캡처 된 카메라 이미지엣 실제 객체나 AR Anchor를 검색하는 기능
 - worldTrnasform : 변환 매트릭스의 일종으로 검출되 표면과 hitTest 결과를 생성 하 포인트 사이의교점을 나타낸다.
  hitTest는 이미지 또는 뷰의 좌표계 2D 점을 선을 따라 3D 공간을 투영 , 해당 선이 검출된 표면과 교차하는 결과를 밪환
+- 추가: 시작 vertex 와 끝 vertext를 추가 하고 사이의 간격의 길이를 
 
 
 
