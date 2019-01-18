@@ -51,7 +51,32 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 - 측정을 하기 위해 사용자의 터치를 감지해야한다 ` touchBegan() ` 를 이용하여 사용자의 터치를 감지
 - hitTest : SceneKit view의 한 지점에 해당하는 캡처 된 카메라 이미지엣 실제 객체나 AR Anchor를 검색하는 기능
 - worldTrnasform : 변환 매트릭스의 일종으로 검출되 표면과 hitTest 결과를 생성 하 포인트 사이의교점을 나타낸다.
- hitTest는 이미지 또는 뷰의 좌표계 2D 점을 선을 따라 3D 공간을 투영 , 해당 선이 검출된 표면과 교차하는 결과를 밪환
+ hitTest는 이미지 또는 뷰의 좌표계 2D 점을 선을 따라 3D 공간을 투영 , 해당 선이 검출된 표면과 교차하는 결과를 반환
+<img width="200" src="https://user-images.githubusercontent.com/33486820/51325014-648be700-1aaf-11e9-8bdc-e9ca400dbde2.jpeg">
+- 추가: 시작 vertex 와 끝 vertext를 추가 하고 사이의 간격의 길이를 측정
+- ` var points = [SCNNode]() ` 배열을 사용, 사용자가 시작 과 끝의 위치를 터치하면 points 배열에 저장후 처음과 끝의 값을 계산
+- `let realDistance = distance(float3(firstPoint.position), float3(lastPoint.position))`: 시작과 끝의 거리를 구함
+<img width="200" alt="2019-01-17 11 26 44" src="https://user-images.githubusercontent.com/33486820/51325362-1b886280-1ab0-11e9-8e32-c3a0419c1f06.png">
+
+- 두 간격 사이의 선을 시각화 하는 방법
+
+```
+extension SCNGeometry {
+   class func line(from vectorFirst: SCNVector3, to vectorLast: SCNVector3) -> SCNGeometry {
+        
+        let indices: [Int32] = [0, 1]
+        let source = SCNGeometrySource(vertices: [vectorFirst, vectorLast])
+        let element = SCNGeometryElement(indices: indices, primitiveType: .line)
+        return SCNGeometry(sources: [source], elements: [element])
+    }
+} 
+````
+
+- SCNGeometry를 확장해 'line 이라는 클래서 정의 함수 생성 -> 두 백터 값을 받아 사이에 선을 이어 `let lineNode = SCNNode(geometry: line)`로 
+scene에 추가
+
+
+
 
 
 
