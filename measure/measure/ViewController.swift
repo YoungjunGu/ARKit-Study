@@ -92,6 +92,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             //시작과 끝 point 사이 선을 추가
             let lineNode = SCNNode(geometry: line)
             sceneView.scene.rootNode.addChildNode(lineNode)
+            //중단점 추가 -> 중단점에 실제 길이 값을 보여주는 3D Text 를 위함
+            let midPoint = (float3(firstPoint.position)) + (float3(lastPoint.position)) / 2
+            let midPointGeometry = SCNSphere(radius: 0.003)
+            midPointGeometry.firstMaterial?.diffuse.contents= UIColor.red
             
             
             isFirstPoint = true
