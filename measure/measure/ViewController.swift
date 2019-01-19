@@ -88,14 +88,37 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             let line = SCNGeometry.line(from: firstPoint.position, to: lastPoint.position)
             print(realDistance.description)
+            line.firstMaterial?.diffuse.contents = UIColor.yellow
             
             //시작과 끝 point 사이 선을 추가
+        
             let lineNode = SCNNode(geometry: line)
             sceneView.scene.rootNode.addChildNode(lineNode)
             //중단점 추가 -> 중단점에 실제 길이 값을 보여주는 3D Text 를 위함
             let midPoint = (float3(firstPoint.position)) + (float3(lastPoint.position)) / 2
             let midPointGeometry = SCNSphere(radius: 0.003)
-            midPointGeometry.firstMaterial?.diffuse.contents= UIColor.red
+            midPointGeometry.firstMaterial?.diffuse.contents = UIColor.red
+            let midPointNode = SCNNode(geometry: midPointGeometry)
+            //중간노드 즉 텍스트를 추가할 노드의 위치를 설정
+            midPointNode.position = SCNVector3Make(midPoint.x, midPoint.y, midPoint.z)
+            sceneView.scene.rootNode.addChildNode(midPointNode)
+            //테스트 노드를 추가
+            //실제 거리 값에 *100  = cm 표현
+            //extrusionDepth : Geometry의 깊이를 설정하는 값
+            let textGeometry = SCNText(string: String(format: "%.1f", realDistance * 100) + "cm" , extrusionDepth: 1)
+            let textNode = SCNNode(geometry: textGeometry)
+            
+            textNode.scale = SCNVector3Make(0.005, 0.005, 0.01)
+            //텍스트 geometry의 정확도와 부드러움 정도를 설정 하는 값
+            textGeometry.flatness = 0.2
+            
+            midPointNode.addChildNode(textNode)
+            
+            //노드가 항상 현재 카메라를 가리 키도록 지시하는 제약 조건
+            //해당 midPoint의 text를 카메라의 모든 방향에서 동일하게 보이도록 제약조건을 걸어 준다.
+            let constraints = SCNBillboardConstraint()
+            constraints.freeAxes = .all
+            midPointNode.constraints = [constraints]
             
             
             isFirstPoint = true
@@ -118,7 +141,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     //View가 회전했을때의 Center 값을 다시 반한 하기 위함
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         center = view.center
     }
     
