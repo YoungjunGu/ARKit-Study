@@ -75,6 +75,9 @@ extension SCNGeometry {
 - SCNGeometry를 확장해 'line 이라는 클래서 정의 함수 생성 -> 두 백터 값을 받아 사이에 선을 이어 `let lineNode = SCNNode(geometry: line)`로 
 scene에 추가
 
+
+
+
 > SCNAudioSource 를 활용
 - ` var audioSource = SCNAudioSource() ` 오디오 소스를 사용할 프로퍼티 생성
 - ` audioSource.isPositional = true `: 오디오 음향을 3D 입체화 시키는 값, 거리에 따라 음향을 자동 조절하는 여부를 설정하는 부울 값
