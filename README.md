@@ -81,14 +81,14 @@ scene에 추가
 
 
 
-## 스터디 방향
+## What to do
 마커, 마커리스 방식에 대한 이해
 
 - Image Tracking
 - Word Tracking
 - Motion Tracking
 
-## 도전해볼 거
+## Challenging
 
 - 사용자 몸을 Detecting 후 간단한 의상을 입혀보기
 - 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
