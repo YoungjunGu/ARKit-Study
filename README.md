@@ -6,11 +6,12 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 ## ARKit Layout
 ARKit 는 증강현실에 필요한 프로세스와 분석 작업을 진행하고 실제 오브젝트의 렌더링은 `SceneKit`,`SpriteKit`,`Metal`이 수행한다.
 
-![2019-02-04 2 32 18](https://user-images.githubusercontent.com/33486820/52180077-38999100-2825-11e9-95bd-3f925e2bf407.png)
+<img width="1213" alt="2019-02-04 2 35 30" src="https://user-images.githubusercontent.com/33486820/52180124-95954700-2825-11e9-954d-44ff610ae9fd.png">
 
 증강 현실 프로세스 작업에는 두가지의 핵심 기능을 사용한다
 
-![2019-02-04 2 32 25](https://user-images.githubusercontent.com/33486820/52180083-43ecbc80-2825-11e9-914b-2de4baf86ac8.png)
+<img width="640" alt="2019-02-04 2 36 15" src="https://user-images.githubusercontent.com/33486820/52180128-acd43480-2825-11e9-9fe2-bc3cd4a31824.png">
+
 
 - `AVFoundation`: 카메라로 촬영하는 영상 데이터를 제공
 - `Core Motion` : 앱 디바이스의 모션에 관한 데이터를 제공
