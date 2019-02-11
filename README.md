@@ -44,7 +44,7 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 
 `ARSession`의 `run` 메소드에 `ARConfiguration` 서브클래스 오브젝트를 넣어 실행시키면 위에서 언급한 것 처럼 `ARSession`은 내부적으로 `AVCaptureSession`과 `CMMotionManager`를 통해 필요한 데이터를 받아 처리하고 이의 결과물을 초당 60프레임으로  `ARFrame` 객체를 반환한다.
 
-<hr><hr>
+<hr>
 
 
 ## 현재진행상황
