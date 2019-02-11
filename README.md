@@ -40,11 +40,11 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 - [`ARObjectScanningConfiguration`](https://developer.apple.com/documentation/arkit/arobjectscanningconfiguration)
   - 후면 카메라를 활용해 고성능 공간 데이터를 수집하고 다른 AR 경험에서의 감지를 위한 참조 객체를 생성
 
+![image](https://user-images.githubusercontent.com/33486820/52576668-e7605180-2e63-11e9-86db-3ea823397768.png)
 
+`ARSession`의 `run` 메소드에 `ARConfiguration` 서브클래스 오브젝트를 넣어 실행시키면 위에서 언급한 것 처럼 `ARSession`은 내부적으로 `AVCaptureSession`과 `CMMotionManager`를 통해 필요한 데이터를 받아 처리하고 이의 결과물을 초당 60프레임으로  `ARFrame` 객체를 반환한다.
 
-
-
-
+<hr><hr>
 
 
 ## 현재진행상황
