@@ -22,6 +22,26 @@ ARKit 는 증강현실에 필요한 프로세스와 분석 작업을 진행하�
 
 ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSCNView 또는 ARSKView 객체를 사용하 AR 경험의 시각적 부분을 쉽게 만들면 뷰 겍체에는 ARSession 인스턴스가 포함된다.
 
+> 세션 구성 및 실행
+
+- [`run(_ : ,options: )`](https://developer.apple.com/documentation/arkit/arsession): 지정된 구성 및 옵션을 사용하여 세션에 대한 AR 처리를 시작
+
+- [`ARSession.RunOptions`](https://developer.apple.com/documentation/arkit/arsession): AR세션의 구성을 변경할때 AR 세션의 현재 상태를 전환하는 방법에 영향을 주는 옵션
+
+- [`configuration: ARConfiguration`](https://developer.apple.com/documentation/arkit/arsession): 세션에 대한 motion 과 scene 을 tracking 행동을 정의하는 객체
+
+- [`pause()`](https://developer.apple.com/documentation/arkit/arsession): 세션에서 처리를 일시 중지
+
+> AR update 응답
+
+- `var delegate: ArSessionDelegate?`: 캡처 된 비디오 이미지 및 tracking 정보를 수신하거나 세션 상태의 변경 사항에 응답하기 위해 제공되는 객체
+
+- `var delegateQueue: DispatchQueue?`: 세션이 대리자 메서드를 호출하는데 사용하는 디스패치 큐
+
+- `protocol ARSessionDelegate`: 캡처된 비디오 프레임 이미지를 수신, AR 세션에서 상태를 추적하도록 구현할 수 있는 메소드
+
+- `protocol ARSessionObserver`: ARSession 의 상태 변화에 대응하기 위해 구현할 수 있는 메소드
+
 
 ### [`ARConfiguration`](https://developer.apple.com/documentation/arkit/arconfiguration) : ARSession 구성을 위한 추상 클래스
 
