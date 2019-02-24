@@ -78,14 +78,31 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 ### [`ARSCNView`](https://developer.apple.com/documentation/arkit/arscnview): 카메라 뷰에 3D SceneKit 컨텐츠를 증강시켜 AR 경험을 출력하는 뷰
 
 <br>
-`ARSCNView`클래스는 실제의 보여지는 현실의 디바이스 카메라 뷰에 3D 컨텐츠를 조합한 증강현실을 만들 수 있는 가장 쉬운 방법을 제공한다. 이 뷰가 제공하는 `ARSession`객체를 실행 시키면 뷰는 해당 작업들을 수행한다.
+`ARSCNView` 클래스는 실제의 보여지는 현실의 디바이스 카메라 뷰에 3D 컨텐츠를 조합한 증강현실을 만들 수 있는 가장 쉬운 방법을 제공한다. 이 뷰가 제공하는 `ARSession`객체를 실행 시키면 뷰는 해당 작업들을 수행한다.
 
 - 뷰는 자동으로 디바이스 카메라가 제공하는 실시간 비디오 피드(Video feed)를 장면의 배경으로 랜더링 한다.
 - 뷰의 SceneKit 장면의 실제의 좌표계는 세션 구성에 의해 설정된 AR속 세상 좌표계에 직접 반응한다.(디바이스를 중심으로 AR좌표계가 매핑이 된다)
 - 뷰는 자동으로 SceneKit 카메라를 움직여 디바이스의 실제 현실 움직임과 일치시킨다.
 <br>
 
+`ARKit` 는 `SceneKit` 의 공간과 실제 현실 세계를 자동으로 일치시키기 때문에 실제 세상에서의 위치를 유지하는 것 처럼 보이는 가상 객체를 배치하기 위해선 객체의 `SceneKit` 위치만 적절히 조절해서 설정하면된다.(문서참고 : [Providing 3D Virtual Content with SceneKit](https://developer.apple.com/documentation/arkit/arscnview/providing_3d_virtual_content_with_scenekit))
+<br>
 
+화면에 추가된 객체의 위치를 추적하기 위해서 [`ARAnchor`](https://developer.apple.com/documentation/arkit/aranchor)의 사용이 필수는 아니지만 [`ARSCNViewDelegate`](https://developer.apple.com/documentation/arkit/arscnviewdelegate)메소드를 구현하면 `ARKit` 에 의해 자동으로 감지 된 모든 앵커에 `SceneKit` 컨텐츠를 추가할 수 있다.
+<br>
+
+### [`ARSKView`](https://developer.apple.com/documentation/arkit/arskview): 카메라 뷰에 2D SpriteKit 컨텐츠를 증강시킨 AR 경험을 출력하는 뷰
+
+<br>
+
+실제 세계의 디바이스 카메라 뷰 내의 3D 공간에 2D 요소를 배치한 증강 현실을 만들기 위해서 `ARSKView` 를 사용하면된다. 이 뷰가 제공하는 [`ARSession`](https://developer.apple.com/documentation/arkit/arsession)을 실행시키면 뷰는 다음의 작업들을 수행한다.
+
+<br>
+
+- 뷰는 자동으로 디바이스 카메라라가 제공하는 실시간 비디오 피드를 장면의 배경으로 랜더링한다.
+- [`ARSKViewDelegate`](https://developer.apple.com/documentation/arkit/arskviewdelegate) 메소드를 구현하여 `Sprite` 컨텐츠를 실제 위치와 연관시키면 뷰가 자동으로 해당 `SpriteKit` 노드의 크기를 조절하고 회전시켜 카메라가 보는 실제 세사을 추적하는 것처럼 보인다.
+
+<br>
 
 ## 현재진행상황
 > Day1
