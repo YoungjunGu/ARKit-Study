@@ -48,7 +48,9 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 - `protocol ARSessionObserver`: ARSession 의 상태 변화에 대응하기 위해 구현할 수 있는 메소드
 
 <br>
+
 ### [`ARConfiguration`](https://developer.apple.com/documentation/arkit/arconfiguration) : ARSession 구성을 위한 추상 클래스
+
 <br>
 추상 클래스 이기에 직접 인스턴스를 만들거나 작업이 불가능하다.
 
@@ -69,10 +71,12 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 
 `ARSession`의 `run` 메소드에 `ARConfiguration` 서브클래스 오브젝트를 넣어 실행시키면 위에서 언급한 것 처럼 `ARSession`은 내부적으로 `AVCaptureSession`과 `CMMotionManager`를 통해 필요한 데이터를 받아 처리하고 이의 결과물을 초당 60프레임으로  `ARFrame` 객체를 반환한다.
 
-<hr>
 <br>
+
 # Display Class
+
 ### [`ARSCNView`](https://developer.apple.com/documentation/arkit/arscnview): 카메라 뷰에 3D SceneKit 컨텐츠를 증강시켜 AR 경험을 출력하는 뷰
+
 <br>
 `ARSCNView`클래스는 실제의 보여지는 현실의 디바이스 카메라 뷰에 3D 컨텐츠를 조합한 증강현실을 만들 수 있는 가장 쉬운 방법을 제공한다. 이 뷰가 제공하는 `ARSession`객체를 실행 시키면 뷰는 해당 작업들을 수행한다.
 
