@@ -36,6 +36,7 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 - [`pause()`](https://developer.apple.com/documentation/arkit/arsession): 세션에서 처리를 일시 중지
 
 <br>
+
 > AR update 응답
 
 - `var delegate: ArSessionDelegate?`: 캡처 된 비디오 이미지 및 tracking 정보를 수신하거나 세션 상태의 변경 사항에 응답하기 위해 제공되는 객체
