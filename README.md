@@ -23,6 +23,7 @@ ARKit 는 증강현실에 필요한 프로세스와 분석 작업을 진행하�
 `ARSession` 객체는 증강 현실에 필요하 작업을 수행하기 위해 ARKit 가 수행하는 주요 프로세스를 관리하고 조정한다. 이러한 프로세스에는 장치의 모셔 감지 하드웨어로 부터 데이터를 읽고, 앱 디바이스에 내장되어있느 카메라를 조정 그리고 캡쳐된 카메라 이미지로부터 이미지 분석 수행 또한 포함한다. Session은 이러 작은 작업들으 결과를 통합하여 장치의 현재 존재하는 주변 환경들의 공간과 AR Contents 를 Modeling 하는 가상 공간 사이의 연결을 구축한다.
 
 ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSCNView 또는 ARSKView 객체를 사용하 AR 경험의 시각적 부분을 쉽게 만들면 뷰 겍체에는 ARSession 인스턴스가 포함된다.
+<br>
 
 > 세션 구성 및 실행
 
@@ -34,6 +35,7 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 
 - [`pause()`](https://developer.apple.com/documentation/arkit/arsession): 세션에서 처리를 일시 중지
 
+<br>
 > AR update 응답
 
 - `var delegate: ArSessionDelegate?`: 캡처 된 비디오 이미지 및 tracking 정보를 수신하거나 세션 상태의 변경 사항에 응답하기 위해 제공되는 객체
@@ -44,13 +46,13 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 
 - `protocol ARSessionObserver`: ARSession 의 상태 변화에 대응하기 위해 구현할 수 있는 메소드
 
-
+<br>
 ### [`ARConfiguration`](https://developer.apple.com/documentation/arkit/arconfiguration) : ARSession 구성을 위한 추상 클래스
-
+<br>
 추상 클래스 이기에 직접 인스턴스를 만들거나 작업이 불가능하다.
 
 AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임에서 필요한 AR 경험 종류에 따라 알맞는 [`ARConfiguration`](https://developer.apple.com/documentation/arkit/arconfiguration)의 서브클래스들의 인스턴스를 생성해서 사용해야 한다. 그리고 구성 객체의 프로퍼티를 지정하고 이를 세션의 [`run(_:options:)`](https://developer.apple.com/documentation/arkit/arsession/2875735-run) 메소드에 전달한다. ARKit는 다음과 같은 구성 클래스들을 포함하고 있다.
-
+<br>
 - [`ARWorldTrackingConfiguration`](https://developer.apple.com/documentation/arkit/arworldtrackingconfiguration) 
   - 후면 카메라를 활용해 디바이스의 위치와 방향을 정교하게 추격하고 지면 감지, 히트 테스팅, 환경에 기반한 조명, 이미지와 사물 인식이 가능한 상위 수준의 AR 경험을 제공
 - [`AROrientationTrackingConfiguration`](https://developer.apple.com/documentation/arkit/arorientationtrackingconfiguration)
@@ -67,6 +69,17 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 `ARSession`의 `run` 메소드에 `ARConfiguration` 서브클래스 오브젝트를 넣어 실행시키면 위에서 언급한 것 처럼 `ARSession`은 내부적으로 `AVCaptureSession`과 `CMMotionManager`를 통해 필요한 데이터를 받아 처리하고 이의 결과물을 초당 60프레임으로  `ARFrame` 객체를 반환한다.
 
 <hr>
+<br>
+# Display Class
+### [`ARSCNView`](https://developer.apple.com/documentation/arkit/arscnview): 카메라 뷰에 3D SceneKit 컨텐츠를 증강시켜 AR 경험을 출력하는 뷰
+<br>
+`ARSCNView`클래스는 실제의 보여지는 현실의 디바이스 카메라 뷰에 3D 컨텐츠를 조합한 증강현실을 만들 수 있는 가장 쉬운 방법을 제공한다. 이 뷰가 제공하는 `ARSession`객체를 실행 시키면 뷰는 해당 작업들을 수행한다.
+
+- 뷰는 자동으로 디바이스 카메라가 제공하는 실시간 비디오 피드(Video feed)를 장면의 배경으로 랜더링 한다.
+- 뷰의 SceneKit 장면의 실제의 좌표계는 세션 구성에 의해 설정된 AR속 세상 좌표계에 직접 반응한다.(디바이스를 중심으로 AR좌표계가 매핑이 된다)
+- 뷰는 자동으로 SceneKit 카메라를 움직여 디바이스의 실제 현실 움직임과 일치시킨다.
+<br>
+
 
 
 ## 현재진행상황
