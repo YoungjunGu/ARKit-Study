@@ -100,7 +100,7 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 <br>
 
 - 뷰는 자동으로 디바이스 카메라라가 제공하는 실시간 비디오 피드를 장면의 배경으로 랜더링한다.
-- [`ARSKViewDelegate`](https://developer.apple.com/documentation/arkit/arskviewdelegate) 메소드를 구현하여 `Sprite` 컨텐츠를 실제 위치와 연관시키면 뷰가 자동으로 해당 `SpriteKit` 노드의 크기를 조절하고 회전시켜 카메라가 보는 실제 세사을 추적하는 것처럼 보인다.
+- [`ARSKViewDelegate`](https://developer.apple.com/documentation/arkit/arskviewdelegate) 메소드를 구현하여 `SpriteKit` 컨텐츠를 실제 위치와 연관시키면 뷰가 자동으로 해당 `SpriteKit` 노드의 크기를 조절하고 회전시켜 카메라가 보는 실제 세사을 추적하는 것처럼 보인다.
 
 <br>
 
