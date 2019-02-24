@@ -16,6 +16,8 @@ ARKit 는 증강현실에 필요한 프로세스와 분석 작업을 진행하�
 - `AVFoundation`: 카메라로 촬영하는 영상 데이터를 제공
 - `Core Motion` : 앱 디바이스의 모션에 관한 데이터를 제공
 
+# Basic Class
+
 ### [`ARSession`](https://developer.apple.com/documentation/arkit/arsession) : AR을 처리하기 위한 공유 객체
 
 `ARSession` 객체는 증강 현실에 필요하 작업을 수행하기 위해 ARKit 가 수행하는 주요 프로세스를 관리하고 조정한다. 이러한 프로세스에는 장치의 모셔 감지 하드웨어로 부터 데이터를 읽고, 앱 디바이스에 내장되어있느 카메라를 조정 그리고 캡쳐된 카메라 이미지로부터 이미지 분석 수행 또한 포함한다. Session은 이러 작은 작업들으 결과를 통합하여 장치의 현재 존재하는 주변 환경들의 공간과 AR Contents 를 Modeling 하는 가상 공간 사이의 연결을 구축한다.
@@ -164,9 +166,3 @@ scene에 추가
 - 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
 - 사물을 Detecting 하여 상황에 맞느 AR 적용 
 - Image Detection과 CoreML을 활용하여 "Real Time Camera Object Detection" 제작 해보기
-
-
-
-
-
-
