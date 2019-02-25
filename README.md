@@ -105,15 +105,10 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 <br>
 
 ## 현재진행상황
-> Day1
-- SceneKit 의 기본적인 개념
-- SCN도형 생성 후 -> SCNNode vector 값 설정 
-- addChildNode(AnyNode) 로 Scene 에 추가
-- SCNLights 를 활용해 도형에 명암 삽입
-> Day2
-- SCNAction 사용 하여 애니메이션 추가
-- SCNLight 설정 
-- SCNPArticleSystem을 사용 하여 애니메이셔 효과 추가
+
+<br>
+
+> [Day1](https://github.com/gaki2745/ARKit-Study/tree/master/Day1_ARUITests)
 
 > Day3
 - Plane Detection (vertical, horizontal)
