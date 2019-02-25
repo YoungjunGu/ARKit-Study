@@ -88,7 +88,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             ringNode.eulerAngles.x = Float(-10.degreesToRadians)
             planetNode.addChildNode(ringNode)
         }
-        
+        //지구면 작업 수행
         if planet.name == "earth" {
             let moonGeometry = SCNSphere(radius: planet.radius/4)
             moonGeometry.firstMaterial?.diffuse.contents = UIColor.yellow
