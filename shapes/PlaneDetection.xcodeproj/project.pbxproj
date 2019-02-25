@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF28551A218AA7620087E90A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF285519218AA7620087E90A /* AppDelegate.swift */; };
+		EF28551C218AA7620087E90A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = EF28551B218AA7620087E90A /* art.scnassets */; };
+		EF28551E218AA7620087E90A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28551D218AA7620087E90A /* ViewController.swift */; };
+		EF285521218AA7620087E90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF28551F218AA7620087E90A /* Main.storyboard */; };
+		EF285523218AA7630087E90A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF285522218AA7630087E90A /* Assets.xcassets */; };
+		EF285526218AA7630087E90A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF285524218AA7630087E90A /* LaunchScreen.storyboard */; };
+		EF285531218AA7630087E90A /* shapesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF285530218AA7630087E90A /* shapesTests.swift */; };
+		EF28553C218AA7630087E90A /* shapesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28553B218AA7630087E90A /* shapesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF28552D218AA7630087E90A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF28550E218AA7620087E90A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF285515218AA7620087E90A;
+			remoteInfo = shapes;
+		};
+		EF285538218AA7630087E90A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF28550E218AA7620087E90A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF285515218AA7620087E90A;
+			remoteInfo = shapes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF285516218AA7620087E90A /* PlaneDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaneDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF285519218AA7620087E90A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF28551B218AA7620087E90A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		EF28551D218AA7620087E90A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF285520218AA7620087E90A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF285522218AA7630087E90A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF285525218AA7630087E90A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF285527218AA7630087E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF28552C218AA7630087E90A /* PlaneDetectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaneDetectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF285530218AA7630087E90A /* shapesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapesTests.swift; sourceTree = "<group>"; };
+		EF285532218AA7630087E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF285537218AA7630087E90A /* PlaneDetectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaneDetectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF28553B218AA7630087E90A /* shapesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapesUITests.swift; sourceTree = "<group>"; };
+		EF28553D218AA7630087E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF285513218AA7620087E90A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF285529218AA7630087E90A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF285534218AA7630087E90A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF28550D218AA7620087E90A = {
+			isa = PBXGroup;
+			children = (
+				EF285518218AA7620087E90A /* shapes */,
+				EF28552F218AA7630087E90A /* shapesTests */,
+				EF28553A218AA7630087E90A /* shapesUITests */,
+				EF285517218AA7620087E90A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF285517218AA7620087E90A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF285516218AA7620087E90A /* PlaneDetection.app */,
+				EF28552C218AA7630087E90A /* PlaneDetectionTests.xctest */,
+				EF285537218AA7630087E90A /* PlaneDetectionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF285518218AA7620087E90A /* shapes */ = {
+			isa = PBXGroup;
+			children = (
+				EF285519218AA7620087E90A /* AppDelegate.swift */,
+				EF28551B218AA7620087E90A /* art.scnassets */,
+				EF28551D218AA7620087E90A /* ViewController.swift */,
+				EF28551F218AA7620087E90A /* Main.storyboard */,
+				EF285522218AA7630087E90A /* Assets.xcassets */,
+				EF285524218AA7630087E90A /* LaunchScreen.storyboard */,
+				EF285527218AA7630087E90A /* Info.plist */,
+			);
+			path = shapes;
+			sourceTree = "<group>";
+		};
+		EF28552F218AA7630087E90A /* shapesTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF285530218AA7630087E90A /* shapesTests.swift */,
+				EF285532218AA7630087E90A /* Info.plist */,
+			);
+			path = shapesTests;
+			sourceTree = "<group>";
+		};
+		EF28553A218AA7630087E90A /* shapesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF28553B218AA7630087E90A /* shapesUITests.swift */,
+				EF28553D218AA7630087E90A /* Info.plist */,
+			);
+			path = shapesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF285515218AA7620087E90A /* PlaneDetection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF285540218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetection" */;
+			buildPhases = (
+				EF285512218AA7620087E90A /* Sources */,
+				EF285513218AA7620087E90A /* Frameworks */,
+				EF285514218AA7620087E90A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaneDetection;
+			productName = shapes;
+			productReference = EF285516218AA7620087E90A /* PlaneDetection.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF28552B218AA7630087E90A /* PlaneDetectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF285543218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetectionTests" */;
+			buildPhases = (
+				EF285528218AA7630087E90A /* Sources */,
+				EF285529218AA7630087E90A /* Frameworks */,
+				EF28552A218AA7630087E90A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF28552E218AA7630087E90A /* PBXTargetDependency */,
+			);
+			name = PlaneDetectionTests;
+			productName = shapesTests;
+			productReference = EF28552C218AA7630087E90A /* PlaneDetectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF285536218AA7630087E90A /* PlaneDetectionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF285546218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetectionUITests" */;
+			buildPhases = (
+				EF285533218AA7630087E90A /* Sources */,
+				EF285534218AA7630087E90A /* Frameworks */,
+				EF285535218AA7630087E90A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF285539218AA7630087E90A /* PBXTargetDependency */,
+			);
+			name = PlaneDetectionUITests;
+			productName = shapesUITests;
+			productReference = EF285537218AA7630087E90A /* PlaneDetectionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF28550E218AA7620087E90A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "youngjun goo";
+				TargetAttributes = {
+					EF285515218AA7620087E90A = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					EF28552B218AA7630087E90A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = EF285515218AA7620087E90A;
+					};
+					EF285536218AA7630087E90A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = EF285515218AA7620087E90A;
+					};
+				};
+			};
+			buildConfigurationList = EF285511218AA7620087E90A /* Build configuration list for PBXProject "PlaneDetection" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF28550D218AA7620087E90A;
+			productRefGroup = EF285517218AA7620087E90A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF285515218AA7620087E90A /* PlaneDetection */,
+				EF28552B218AA7630087E90A /* PlaneDetectionTests */,
+				EF285536218AA7630087E90A /* PlaneDetectionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF285514218AA7620087E90A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28551C218AA7620087E90A /* art.scnassets in Resources */,
+				EF285526218AA7630087E90A /* LaunchScreen.storyboard in Resources */,
+				EF285523218AA7630087E90A /* Assets.xcassets in Resources */,
+				EF285521218AA7620087E90A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28552A218AA7630087E90A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF285535218AA7630087E90A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF285512218AA7620087E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28551E218AA7620087E90A /* ViewController.swift in Sources */,
+				EF28551A218AA7620087E90A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF285528218AA7630087E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF285531218AA7630087E90A /* shapesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF285533218AA7630087E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28553C218AA7630087E90A /* shapesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF28552E218AA7630087E90A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF285515218AA7620087E90A /* PlaneDetection */;
+			targetProxy = EF28552D218AA7630087E90A /* PBXContainerItemProxy */;
+		};
+		EF285539218AA7630087E90A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF285515218AA7620087E90A /* PlaneDetection */;
+			targetProxy = EF285538218AA7630087E90A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF28551F218AA7620087E90A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF285520218AA7620087E90A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF285524218AA7630087E90A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF285525218AA7630087E90A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF28553E218AA7630087E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF28553F218AA7630087E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF285541218AA7630087E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = shapes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF285542218AA7630087E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = shapes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF285544218AA7630087E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shapesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaneDetection.app/PlaneDetection";
+			};
+			name = Debug;
+		};
+		EF285545218AA7630087E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shapesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaneDetection.app/PlaneDetection";
+			};
+			name = Release;
+		};
+		EF285547218AA7630087E90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shapesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = shapes;
+			};
+			name = Debug;
+		};
+		EF285548218AA7630087E90A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shapesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.shapesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = shapes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF285511218AA7620087E90A /* Build configuration list for PBXProject "PlaneDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF28553E218AA7630087E90A /* Debug */,
+				EF28553F218AA7630087E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF285540218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF285541218AA7630087E90A /* Debug */,
+				EF285542218AA7630087E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF285543218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF285544218AA7630087E90A /* Debug */,
+				EF285545218AA7630087E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF285546218AA7630087E90A /* Build configuration list for PBXNativeTarget "PlaneDetectionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF285547218AA7630087E90A /* Debug */,
+				EF285548218AA7630087E90A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF28550E218AA7620087E90A /* Project object */;
+}

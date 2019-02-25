@@ -27,7 +27,7 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 
 > 세션 구성 및 실행
 
-- [`run(_ : ,options: )`](https://developer.apple.com/documentation/arkit/arsession): 지정된 구성 및 옵션을 사용하여 세션에 대한 AR 처리를 시작
+- [`run(_ :options:)`](https://developer.apple.com/documentation/arkit/arsession): 지정된 구성 및 옵션을 사용하여 세션에 대한 AR 처리를 시작
 
 - [`ARSession.RunOptions`](https://developer.apple.com/documentation/arkit/arsession): AR세션의 구성을 변경할때 AR 세션의 현재 상태를 전환하는 방법에 영향을 주는 옵션
 
@@ -39,7 +39,7 @@ ARkit로 구축된 모든 AR애는 단일 ARsession 객체가 필요하다. ARSC
 
 > AR update 응답
 
-- `var delegate: ArSessionDelegate?`: 캡처 된 비디오 이미지 및 tracking 정보를 수신하거나 세션 상태의 변경 사항에 응답하기 위해 제공되는 객체
+- `var delegate: ARSessionDelegate?`: 캡처 된 비디오 이미지 및 tracking 정보를 수신하거나 세션 상태의 변경 사항에 응답하기 위해 제공되는 객체
 
 - `var delegateQueue: DispatchQueue?`: 세션이 대리자 메서드를 호출하는데 사용하는 디스패치 큐
 
@@ -108,9 +108,16 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 
 <br>
 
-> [Day1](https://github.com/gaki2745/ARKit-Study/tree/master/Day1_ARUITests)
+> Day1
+
+- SCNScene
+- SCNGeometry
+- SCNMeterial
+- SCNNode
+<br>
 
 > Day3
+
 - Plane Detection (vertical, horizontal)
 - renderer method 에서 plane 생성
 - euler = -90 이 평면 plane의 경사 정도를 나타내는 값
@@ -121,18 +128,23 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 - Shadow 적용 법 plane 위에 directional light 설정후 casts shadow 설정 (false)
 - renderingOrder = -1 설정으로 지정한 node의 순서를 지정 렌더링 순서 크면으 마지막으로 렌더링 된다.
 - planeGeometry.firstMaterial?.isDoubleSided SceneKit이 plane을 detecting 시에 양면을 detecting을 해야하는지 여부 설정
+<br>
 
 > Day4
+
 - Metal이란? Apple OS앱의 그래픽작업을 위해 그래픽 처리장치(GPU)에 직접적으로 접근하여 다양한 기능을 제공하는 렌더링
   Metal 2는 GPU가 그래픽 파이프라인을 더 강력히 제어하고, 신경망 훈련을 가속(Metal Performance Shader(MPS), 셰이더 코드를 깊이 통찰등에 장점들을 가진다.
 - Plane Detection을 위해 MTLCreateSystemDefaultDevice를 사용 하여 지속적으로 planeGeometry를 update 하여 실제 평면을 빠르게 감지하여 update 하는것을 볼 수 있었다.
+<br>
 
 > Day5
+
 - PlaneDetection 마지막 "바닥에 위험한 구멍을 내보자"
 - 3개의 Tube 를 활용하여 lib(입구), Darkness(구멍 속) , occlussion(외부에 안보이게 튜브를 클로킹하기 위한 tube)
 - 중복을 막기 위해 boolean 프로퍼티로 제어하자  
 
 > Day6(Image Detecting)
+
 - AVSpeechSynthesizer() : iOS에서 사용되는 Text-to_Speech 방식 , 텍스트를 siri 음성으로 speech 해준다.
 - 사용방법: AVSpeechSynthesizer() ,AVSpeechUtterance() 프로퍼티 생성 후 Utterance 프로퍼티로 읽고 싶은 문장의 속성을 제어
   speech.speak(utterance) 로 문장 speech 실행
@@ -144,17 +156,21 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 <img width="676" alt="2018-11-12 9 58 50" src="https://user-images.githubusercontent.com/33486820/48348991-43c99e80-e6c6-11e8-8166-19806e984e9f.png"><br>
 
 > Measure(AR 측정 앱)
+
+<br>
 - 측정을 하기 위해 사용자의 터치를 감지해야한다 ` touchBegan() ` 를 이용하여 사용자의 터치를 감지
 - hitTest : SceneKit view의 한 지점에 해당하는 캡처 된 카메라 이미지엣 실제 객체나 AR Anchor를 검색하는 기능
 - worldTrnasform : 변환 매트릭스의 일종으로 검출되 표면과 hitTest 결과를 생성 하 포인트 사이의교점을 나타낸다.
  hitTest는 이미지 또는 뷰의 좌표계 2D 점을 선을 따라 3D 공간을 투영 , 해당 선이 검출된 표면과 교차하는 결과를 반환
 <img width="200" src="https://user-images.githubusercontent.com/33486820/51325014-648be700-1aaf-11e9-8bdc-e9ca400dbde2.jpeg">
+
 - 추가: 시작 vertex 와 끝 vertext를 추가 하고 사이의 간격의 길이를 측정
 - ` var points = [SCNNode]() ` 배열을 사용, 사용자가 시작 과 끝의 위치를 터치하면 points 배열에 저장후 처음과 끝의 값을 계산
 - `let realDistance = distance(float3(firstPoint.position), float3(lastPoint.position))`: 시작과 끝의 거리를 구함
-<img width="200" alt="2019-01-17 11 26 44" src="https://user-images.githubusercontent.com/33486820/51325362-1b886280-1ab0-11e9-8e32-c3a0419c1f06.png">
+<img width="200" alt="2019-01-17 11 26 44" src="https://user-images.githubusercontent.com/33486820/51325362-1b886280-1ab0-11e9-8e32-c3a0419c1f06.png"><br>
 
 - 두 간격 사이의 선을 시각화 하는 방법
+<br>
 
 ```swift
 extension SCNGeometry {
@@ -168,6 +184,7 @@ extension SCNGeometry {
 } 
 ````
 
+<br>
 - SCNGeometry를 확장해 'line 이라는 클래서 정의 함수 생성 -> 두 백터 값을 받아 사이에 선을 이어 `let lineNode = SCNNode(geometry: line)`로 
 scene에 추가
 
@@ -180,19 +197,3 @@ scene에 추가
 - ` audioSource.shouldStream = false `: 재생할 때 오디오 소스가 소스 URL에서 콘텐츠를 스트리밍해야하는지 여부를 결정하는 부울 값
 
 
-
-
-
-## What to do
-마커, 마커리스 방식에 대한 이해
-
-- Image Tracking
-- Word Tracking
-- Motion Tracking
-
-## Challenging
-
-- 사용자 몸을 Detecting 후 간단한 의상을 입혀보기
-- 특정 지형을 감지 즉 특정 지형에서면 AR 이 작동
-- 사물을 Detecting 하여 상황에 맞느 AR 적용 
-- Image Detection과 CoreML을 활용하여 "Real Time Camera Object Detection" 제작 해보기
