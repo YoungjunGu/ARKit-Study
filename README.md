@@ -161,7 +161,7 @@ AR 세션을 실행시키기 위해선 당신이 제작하는 앱이나 게임�
 
 - 두 간격 사이의 선을 시각화 하는 방법
 
-```
+```swift
 extension SCNGeometry {
    class func line(from vectorFirst: SCNVector3, to vectorLast: SCNVector3) -> SCNGeometry {
         
