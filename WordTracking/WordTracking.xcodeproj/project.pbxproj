@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFDBBDBD22243A6D00BDAC78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDBBDBC22243A6D00BDAC78 /* AppDelegate.swift */; };
+		EFDBBDBF22243A6D00BDAC78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = EFDBBDBE22243A6D00BDAC78 /* art.scnassets */; };
+		EFDBBDC122243A6D00BDAC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDBBDC022243A6D00BDAC78 /* ViewController.swift */; };
+		EFDBBDC422243A6D00BDAC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFDBBDC222243A6D00BDAC78 /* Main.storyboard */; };
+		EFDBBDC622243A6E00BDAC78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFDBBDC522243A6E00BDAC78 /* Assets.xcassets */; };
+		EFDBBDC922243A6E00BDAC78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFDBBDC722243A6E00BDAC78 /* LaunchScreen.storyboard */; };
+		EFDBBDD422243A6E00BDAC78 /* WordTrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDBBDD322243A6E00BDAC78 /* WordTrackingTests.swift */; };
+		EFDBBDDF22243A6E00BDAC78 /* WordTrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDBBDDE22243A6E00BDAC78 /* WordTrackingUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFDBBDD022243A6E00BDAC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFDBBDB122243A6D00BDAC78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFDBBDB822243A6D00BDAC78;
+			remoteInfo = WordTracking;
+		};
+		EFDBBDDB22243A6E00BDAC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFDBBDB122243A6D00BDAC78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFDBBDB822243A6D00BDAC78;
+			remoteInfo = WordTracking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFDBBDB922243A6D00BDAC78 /* WordTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDBBDBC22243A6D00BDAC78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EFDBBDBE22243A6D00BDAC78 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		EFDBBDC022243A6D00BDAC78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFDBBDC322243A6D00BDAC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFDBBDC522243A6E00BDAC78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFDBBDC822243A6E00BDAC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EFDBBDCA22243A6E00BDAC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFDBBDCF22243A6E00BDAC78 /* WordTrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordTrackingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDBBDD322243A6E00BDAC78 /* WordTrackingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTrackingTests.swift; sourceTree = "<group>"; };
+		EFDBBDD522243A6E00BDAC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFDBBDDA22243A6E00BDAC78 /* WordTrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordTrackingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDBBDDE22243A6E00BDAC78 /* WordTrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTrackingUITests.swift; sourceTree = "<group>"; };
+		EFDBBDE022243A6E00BDAC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFDBBDB622243A6D00BDAC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDCC22243A6E00BDAC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDD722243A6E00BDAC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFDBBDB022243A6D00BDAC78 = {
+			isa = PBXGroup;
+			children = (
+				EFDBBDBB22243A6D00BDAC78 /* WordTracking */,
+				EFDBBDD222243A6E00BDAC78 /* WordTrackingTests */,
+				EFDBBDDD22243A6E00BDAC78 /* WordTrackingUITests */,
+				EFDBBDBA22243A6D00BDAC78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFDBBDBA22243A6D00BDAC78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFDBBDB922243A6D00BDAC78 /* WordTracking.app */,
+				EFDBBDCF22243A6E00BDAC78 /* WordTrackingTests.xctest */,
+				EFDBBDDA22243A6E00BDAC78 /* WordTrackingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFDBBDBB22243A6D00BDAC78 /* WordTracking */ = {
+			isa = PBXGroup;
+			children = (
+				EFDBBDBC22243A6D00BDAC78 /* AppDelegate.swift */,
+				EFDBBDBE22243A6D00BDAC78 /* art.scnassets */,
+				EFDBBDC022243A6D00BDAC78 /* ViewController.swift */,
+				EFDBBDC222243A6D00BDAC78 /* Main.storyboard */,
+				EFDBBDC522243A6E00BDAC78 /* Assets.xcassets */,
+				EFDBBDC722243A6E00BDAC78 /* LaunchScreen.storyboard */,
+				EFDBBDCA22243A6E00BDAC78 /* Info.plist */,
+			);
+			path = WordTracking;
+			sourceTree = "<group>";
+		};
+		EFDBBDD222243A6E00BDAC78 /* WordTrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFDBBDD322243A6E00BDAC78 /* WordTrackingTests.swift */,
+				EFDBBDD522243A6E00BDAC78 /* Info.plist */,
+			);
+			path = WordTrackingTests;
+			sourceTree = "<group>";
+		};
+		EFDBBDDD22243A6E00BDAC78 /* WordTrackingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EFDBBDDE22243A6E00BDAC78 /* WordTrackingUITests.swift */,
+				EFDBBDE022243A6E00BDAC78 /* Info.plist */,
+			);
+			path = WordTrackingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFDBBDB822243A6D00BDAC78 /* WordTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFDBBDE322243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTracking" */;
+			buildPhases = (
+				EFDBBDB522243A6D00BDAC78 /* Sources */,
+				EFDBBDB622243A6D00BDAC78 /* Frameworks */,
+				EFDBBDB722243A6D00BDAC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordTracking;
+			productName = WordTracking;
+			productReference = EFDBBDB922243A6D00BDAC78 /* WordTracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFDBBDCE22243A6E00BDAC78 /* WordTrackingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFDBBDE622243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTrackingTests" */;
+			buildPhases = (
+				EFDBBDCB22243A6E00BDAC78 /* Sources */,
+				EFDBBDCC22243A6E00BDAC78 /* Frameworks */,
+				EFDBBDCD22243A6E00BDAC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFDBBDD122243A6E00BDAC78 /* PBXTargetDependency */,
+			);
+			name = WordTrackingTests;
+			productName = WordTrackingTests;
+			productReference = EFDBBDCF22243A6E00BDAC78 /* WordTrackingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFDBBDD922243A6E00BDAC78 /* WordTrackingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFDBBDE922243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTrackingUITests" */;
+			buildPhases = (
+				EFDBBDD622243A6E00BDAC78 /* Sources */,
+				EFDBBDD722243A6E00BDAC78 /* Frameworks */,
+				EFDBBDD822243A6E00BDAC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFDBBDDC22243A6E00BDAC78 /* PBXTargetDependency */,
+			);
+			name = WordTrackingUITests;
+			productName = WordTrackingUITests;
+			productReference = EFDBBDDA22243A6E00BDAC78 /* WordTrackingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFDBBDB122243A6D00BDAC78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "youngjun goo";
+				TargetAttributes = {
+					EFDBBDB822243A6D00BDAC78 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					EFDBBDCE22243A6E00BDAC78 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EFDBBDB822243A6D00BDAC78;
+					};
+					EFDBBDD922243A6E00BDAC78 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EFDBBDB822243A6D00BDAC78;
+					};
+				};
+			};
+			buildConfigurationList = EFDBBDB422243A6D00BDAC78 /* Build configuration list for PBXProject "WordTracking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFDBBDB022243A6D00BDAC78;
+			productRefGroup = EFDBBDBA22243A6D00BDAC78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFDBBDB822243A6D00BDAC78 /* WordTracking */,
+				EFDBBDCE22243A6E00BDAC78 /* WordTrackingTests */,
+				EFDBBDD922243A6E00BDAC78 /* WordTrackingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFDBBDB722243A6D00BDAC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDBBDBF22243A6D00BDAC78 /* art.scnassets in Resources */,
+				EFDBBDC922243A6E00BDAC78 /* LaunchScreen.storyboard in Resources */,
+				EFDBBDC622243A6E00BDAC78 /* Assets.xcassets in Resources */,
+				EFDBBDC422243A6D00BDAC78 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDCD22243A6E00BDAC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDD822243A6E00BDAC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFDBBDB522243A6D00BDAC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDBBDC122243A6D00BDAC78 /* ViewController.swift in Sources */,
+				EFDBBDBD22243A6D00BDAC78 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDCB22243A6E00BDAC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDBBDD422243A6E00BDAC78 /* WordTrackingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDBBDD622243A6E00BDAC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDBBDDF22243A6E00BDAC78 /* WordTrackingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFDBBDD122243A6E00BDAC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFDBBDB822243A6D00BDAC78 /* WordTracking */;
+			targetProxy = EFDBBDD022243A6E00BDAC78 /* PBXContainerItemProxy */;
+		};
+		EFDBBDDC22243A6E00BDAC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFDBBDB822243A6D00BDAC78 /* WordTracking */;
+			targetProxy = EFDBBDDB22243A6E00BDAC78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFDBBDC222243A6D00BDAC78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDBBDC322243A6D00BDAC78 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EFDBBDC722243A6E00BDAC78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDBBDC822243A6E00BDAC78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFDBBDE122243A6E00BDAC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EFDBBDE222243A6E00BDAC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFDBBDE422243A6E00BDAC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTracking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTracking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFDBBDE522243A6E00BDAC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTracking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTracking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EFDBBDE722243A6E00BDAC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTrackingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordTracking.app/WordTracking";
+			};
+			name = Debug;
+		};
+		EFDBBDE822243A6E00BDAC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTrackingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordTracking.app/WordTracking";
+			};
+			name = Release;
+		};
+		EFDBBDEA22243A6E00BDAC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTrackingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTrackingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WordTracking;
+			};
+			name = Debug;
+		};
+		EFDBBDEB22243A6E00BDAC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CLQV3W6FV;
+				INFOPLIST_FILE = WordTrackingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.youngjun.WordTrackingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WordTracking;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFDBBDB422243A6D00BDAC78 /* Build configuration list for PBXProject "WordTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDBBDE122243A6E00BDAC78 /* Debug */,
+				EFDBBDE222243A6E00BDAC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFDBBDE322243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDBBDE422243A6E00BDAC78 /* Debug */,
+				EFDBBDE522243A6E00BDAC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFDBBDE622243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTrackingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDBBDE722243A6E00BDAC78 /* Debug */,
+				EFDBBDE822243A6E00BDAC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFDBBDE922243A6E00BDAC78 /* Build configuration list for PBXNativeTarget "WordTrackingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDBBDEA22243A6E00BDAC78 /* Debug */,
+				EFDBBDEB22243A6E00BDAC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFDBBDB122243A6D00BDAC78 /* Project object */;
+}
