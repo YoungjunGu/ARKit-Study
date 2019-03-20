@@ -185,6 +185,7 @@ extension SCNGeometry {
 ````
 
 <br>
+
 - SCNGeometry를 확장해 'line 이라는 클래서 정의 함수 생성 -> 두 백터 값을 받아 사이에 선을 이어 `let lineNode = SCNNode(geometry: line)`로 
 scene에 추가
 
