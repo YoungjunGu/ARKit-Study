@@ -16,6 +16,7 @@
 		EF3F149322428338004AC261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3F149122428338004AC261 /* LaunchScreen.storyboard */; };
 		EF3F149E22428339004AC261 /* EmojiTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F149D22428339004AC261 /* EmojiTestTests.swift */; };
 		EF3F14A922428339004AC261 /* EmojiTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F14A822428339004AC261 /* EmojiTestUITests.swift */; };
+		EF3F14B722429122004AC261 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F14B622429122004AC261 /* EmojiCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EF3F14A422428339004AC261 /* EmojiTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3F14A822428339004AC261 /* EmojiTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTestUITests.swift; sourceTree = "<group>"; };
 		EF3F14AA22428339004AC261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3F14B622429122004AC261 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				EF3F148622428337004AC261 /* Scene.sks */,
 				EF3F148822428337004AC261 /* Scene.swift */,
 				EF3F148A22428337004AC261 /* ViewController.swift */,
+				EF3F14B622429122004AC261 /* EmojiCollectionViewCell.swift */,
 				EF3F148C22428337004AC261 /* Main.storyboard */,
 				EF3F148F22428338004AC261 /* Assets.xcassets */,
 				EF3F149122428338004AC261 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 				EF3F148B22428337004AC261 /* ViewController.swift in Sources */,
 				EF3F148922428337004AC261 /* Scene.swift in Sources */,
 				EF3F148522428337004AC261 /* AppDelegate.swift in Sources */,
+				EF3F14B722429122004AC261 /* EmojiCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

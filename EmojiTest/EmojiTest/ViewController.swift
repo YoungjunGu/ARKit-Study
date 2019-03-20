@@ -12,10 +12,26 @@ import ARKit
 
 class ViewController: UIViewController, ARSKViewDelegate {
     
+    // MARK: - Properties
+    // MARK: -
+    
     @IBOutlet var sceneView: ARSKView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emojiButton: UIButton!
+    @IBOutlet weak var drawerView: UIVisualEffectView!
+    
+    var isDrawerOpen = true
+    
+    let emojis = ["😂","😁","🍎","😀","😍","😏","🏝","😇","❤️","😴","😔","😭","🖤","🤩","😊","😒","💕","😳","🙈","😓"]
+    
+    var selectEmoji = "🍎"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         sceneView.delegate = self
         sceneView.showsFPS = true
         sceneView.showsNodeCount = true
@@ -42,28 +58,69 @@ class ViewController: UIViewController, ARSKViewDelegate {
         sceneView.session.pause()
     }
     
+    @IBAction func emojiTapped(_ sender: Any) {
+        if isDrawerOpen {
+            closeDrawer()
+        } else {
+            openDrawer()
+        }
+    
+    }
+    
+    func openDrawer() {
+        isDrawerOpen = true
+        UIView.animate(withDuration: 3) {
+            self.drawerView.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func closeDrawer() {
+        isDrawerOpen = false
+        
+        UIView.animate(withDuration: 0.3) {
+            self.drawerView.transform = CGAffineTransform(translationX: 0, y: 100)
+        }
+    }
+    
+    
     // MARK: - ARSKViewDelegate
     //SKNode
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: "👾")
+        let labelNode = SKLabelNode(text: selectEmoji)
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
         return labelNode;
     }
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return emojis.count
     }
     
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiCell", for: indexPath) as!
+        EmojiCollectionViewCell
         
+        cell.emojiLabel.text = emojis[indexPath.row]
+        
+        return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectEmoji = emojis[indexPath.row]
+        emojiButton.setTitle(selectEmoji, for: .normal)
+        closeDrawer()
+    }
+    
+    
 }
