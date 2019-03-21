@@ -67,7 +67,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 }
 ```
 
-### [SCNScene](https://developer.apple.com/documentation/scenekit/scnscene)
+### [`SCNScene`](https://developer.apple.com/documentation/scenekit/scnscene)
 
 Node Layer와 3D Scene을 만드는 전역 프로퍼티들의 컨테이너 이다.
 
