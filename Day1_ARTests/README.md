@@ -97,7 +97,7 @@ Geometry를 `SCNNode` 객체에 붙임으로써 Scene에서 Geometry의 위치�
 > Geometry를 쉽게 복사할 수 있고 그들의 Material또한 쉽게 변경 가능하다
 
 
-Geometry 객체는 변경 불가능한 **정점 데이터(vertex data)** 와 ** 변경가능한 Material** 간의 관계를 관리한다. 하나의 Geometry를 다른 Material의 구성으로 동일한 씬에서 한번 이상 보이게 하려면 [copy()](https://developer.apple.com/documentation/objectivec/nsobject/1418807-copy) 메소드를 사용하면 된다. 이러한 복사본은 원본의 정점 데이터를 공유하지만 Material은 별개로 지정 가능하다. 그 결과 상당한 비용이 드는 랜더링 퍼포먼스 없이 하나의 Geometry를 복사해서 사용할 수 있다.
+Geometry 객체는 변경 불가능한 **정점 데이터(vertex data)** 와 **변경가능한 Material** 간의 관계를 관리한다. 하나의 Geometry를 다른 Material의 구성으로 동일한 씬에서 한번 이상 보이게 하려면 [copy()](https://developer.apple.com/documentation/objectivec/nsobject/1418807-copy) 메소드를 사용하면 된다. 이러한 복사본은 원본의 정점 데이터를 공유하지만 Material은 별개로 지정 가능하다. 그 결과 상당한 비용이 드는 랜더링 퍼포먼스 없이 하나의 Geometry를 복사해서 사용할 수 있다.
 
 
 > Geometry 객체에 애니메이션 효과를 줄 수 있다.
