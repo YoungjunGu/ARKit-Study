@@ -201,4 +201,6 @@ scene에 추가
 - ` audioSource.isPositional = true `: 오디오 음향을 3D 입체화 시키는 값, 거리에 따라 음향을 자동 조절하는 여부를 설정하는 부울 값
 - ` audioSource.shouldStream = false `: 재생할 때 오디오 소스가 소스 URL에서 콘텐츠를 스트리밍해야하는지 여부를 결정하는 부울 값
 
+> 이미지를 찾아 SCNScene을 랜더링
 
+- [image Tracking](https://github.com/gaki2745/ARKit-Study/tree/master/ARReality)
