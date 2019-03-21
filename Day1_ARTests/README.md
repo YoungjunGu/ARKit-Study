@@ -74,7 +74,7 @@ Node Layer와 3D Scene을 만드는 전역 프로퍼티들의 컨테이너 이�
 SCneneKit를 사용하여 3D 컨텐츠를 표시하기 위해서는 시각적 요소를 표현하는 속성들과 노드들의 계층을 포함하는 Scene 을 생성해야한다. 일반적으로 3D visual editor로 asset 을 생성하고 Xcode의 `SceneKit Scene Editor` 를 사용하여 하나의 씬으로 조합하면 SceneKit에서의 렌더링 준비가 끝난다.
 
 
-<img width="546" alt="image" src="https://user-images.githubusercontent.com/33486820/54734803-9c192b80-4be5-11e9-94a5-3e12eb0107f3.png">
+<img alt="image" src="https://user-images.githubusercontent.com/33486820/54734803-9c192b80-4be5-11e9-94a5-3e12eb0107f3.png">
 
 출력하고자 하는 Scene 을 위해 런타임에서 불러와야 하며 이를 [SCNView](https://developer.apple.com/documentation/scenekit/scnview)의 프로퍼티로 지정해야한다. 증강현실을 제공하기 위한 ARKit의 ARKit의 `ARSCNView`는 SCNView 타입의 scene 프로퍼티를 갖고 있어 코드에서 생성한 SCNView 타입의 scene 객체를 할당해줄 수 있다.
 
