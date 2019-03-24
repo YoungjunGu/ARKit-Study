@@ -1,4 +1,4 @@
-# ARKit 기본적이 구현
+# ARKit 기본적인 구현
 
 이 글은 [`Apple Developer 공식문서`](https://developer.apple.com/documentation) 를 번역하여 학습한 자료임을 밝힙니다.
 
