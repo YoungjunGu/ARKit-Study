@@ -8,7 +8,7 @@ Face Tracking을 위해 TrueDepth 전면 카메라를 지원하는 iPhone이 필
 
 - Xcode를 실행하고 Single View App 템플릿을 기반으로 새로운 프로젝트를 만든다.
 - `import ARKit` 를 추가한다.
-- Main.stroyboard 에서 ViewController의 최상위 view를 선택한 상태에서 클래스를 `ARSCNView`로 변경합니다.
+- Main.stroyboard 에서 ViewController의 최상위 view를 선택한 상태에서 클래스를 `ARSCNView`로 변경한다.
 
 <img width="1399" alt="image" src="https://user-images.githubusercontent.com/33486820/55002731-73949580-501a-11e9-987a-1598e94263d2.png">
 
