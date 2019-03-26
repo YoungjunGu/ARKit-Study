@@ -55,10 +55,10 @@ guard ARFaceTrackingConfiguration.isSupported else {
 }
 ```
 
+## Face Anchors and Geometries
 
-### Face Anchors and Geometries
 
-- [`ARFaceAnchor`](https://developer.apple.com/documentation/arkit/arfaceanchor)
+### [`ARFaceAnchor`](https://developer.apple.com/documentation/arkit/arfaceanchor)
 
 Face Tracking AR Session에서 감지된 얼굴의 포즈, 위상 및 표현에 대한 정보
 
@@ -96,9 +96,51 @@ class ARFaceAnchor : ARAnchor
 [`blendShapes`](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes) property(혼합형 쉐이프 특성) 은 현재 얼굴 표정의 높은 수준의 모델을 제공하며, 중립 구성에 대한 특정 얼굴 형상의 움직임을 나타내는 일련의 명명된 계수를 통해 설명된다. 혼합형 모양 계수를 사용하여 사용자의 얼굴 표정을 따르는 방법으로 캐릭터나 아바타와 같은 2D 또는 3D 콘텐츠를 애니메이션할 수 있다.
 
 
-- [`ARFaceGeometry`](https://developer.apple.com/documentation/arkit/arfacegeometry)
-- [`ARSCNFaceGeometry`](https://developer.apple.com/documentation/arkit/arscnfacegeometry)
+<hr>
 
+### [`ARFaceGeometry`](https://developer.apple.com/documentation/arkit/arfacegeometry)
+
+
+얼굴 추적 AR 세션에 사용되는 얼굴 토폴로지를 설명하는 3D 망(mesh)
+
+```swift
+class ARFaceGeometry : NSObject
+```
+
+이 클래스는 다양한 렌더링 기술과 함께 사용하거나 3D Asset을 내보내는 데 적합한 3D 망(mesh)의 형태로 얼굴의 세부 topology(위상)에 대한 일반 모델을 제공한다.(SceneKit를 사용하여 얼굴 형상을 신속하게 시각화하는 방법은 [`ARSCNFaceGeometry`](https://developer.apple.com/documentation/arkit/arscnfacegeometry) 클래스를 참조).
+
+얼굴 추적 AR 세션에서 [`ARFaceAnchor`]([`ARFaceAnchor`](https://developer.apple.com/documentation/arkit/arfaceanchor)객체로부터 얼굴 형상을 얻을 때 모델은 검출된 얼굴의 치수, 형태 및 현재 표현과 일치한다. 또한 얼굴의 현재 표현에 대한 상세하지만 효율적인 설명을 제공하는 blend shape coefficients의 dictionary를 사용하여 얼굴의 mesh를 만들 수도 있다.
+
+AR 세션에서 이 모델을 사용자의 얼굴 모양을 따르는 컨텐츠를 오버레이하는 기준으로 사용할 수 있다(예: SNOW 앱). 또한 이 모델을 사용하여 카메라 영상에서 탐지된 면의 3D 모양 뒤에 다른 가상 컨텐츠를 숨기는 폐색 형상을 만들 수도 있다.
+
+> 노트
+
+얼굴 메쉬 위상은 ARFaceGeometry 인스턴스(instance)에 걸쳐 일정하다. 즉, [vertexCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928206-vertexcount),[textureCoordinateCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928197-texturecoordinatecount) 및 [trianglecount의](https://developer.apple.com/documentation/arkit/arfacegeometry/2928207-trianglecount)의 값은 절대 변하지 않으며, [triangleIndices](https://developer.apple.com/documentation/arkit/arfacegeometry/2928199-triangleindices)버퍼는 항상 정점의 동일한 배치를 설명하며, 텍스쳐 좌표 버퍼는 항상 동일한 정점 지수를 동일한 질감 좌표에 매핑한다.
+
+AR 세션에서 제공하는 얼굴 메쉬 간에 정점 버퍼만 변경되며, ARKit가 사용자 얼굴의 모양과 표현에 mesh를 적응시킬 때 vertex 위치의 변화를 나타낸다.
+
+
+<hr>
+
+
+### [`ARSCNFaceGeometry`](https://developer.apple.com/documentation/arkit/arscnfacegeometry)
+
+AR Session에 의해 제공된 얼굴 정보와 함께 사용하기 위한 얼굴 topology(위상)의 SceneKit 표현
+
+
+```swift
+class ARSCNFaceGeometry : SCNGeometry
+```
+
+이 클래스는 ARFaceGeometry 클래스에서 제공하는 mesh 데이터를 감싸는 SCNGeometry의 하위 클래스다. ARKit에서 제공하는 얼굴 위상과 얼굴 표정을 SceneKit View에서 빠르고 쉽게 시각화할 수 있는 ARSCNFaceGeometry를 사용할 수 있다.
+
+
+> ARSCNFaceGeometry는 Metal을 사용하는 SceneKit View 또는 렌더러에서만 사용할 수 있다. 이 클래스는 OpenGL 기반 SceneKit 렌더링에는 지원되지 않는다
+
+
+얼굴 mesh 위상은 ARSCNFaceGeometry 객체의 수명 동안 일정하다. 즉, 지오메트리의 단일 [`SCNGeometryElement`](https://developer.apple.com/documentation/scenekit/scngeometryelement) 객체는 항상 같은 정점의 배치를 기술하며, [`texcoord`](https://developer.apple.com/documentation/scenekit/scngeometrysource/semantic/1523762-texcoord) 지오메트리 소스는 항상 동일한 정점을 동일한 texture 좌표에 매핑한다.
+
+[`update(from:)`](https://developer.apple.com/documentation/arkit/arscnfacegeometry/2928196-update)메서드로 지오메트리를 수정하면 정점 지오메트리 소스의 내용만 변경되어 ARKit가 사용자 얼굴의 모양과 표현에 mesh를 적응시킴으로써 정점 위치의 차이를 나타낸다.
 
 
 
