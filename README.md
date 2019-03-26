@@ -4,7 +4,7 @@ ARkit2.0,SceneKit,SpriteKit,Metal 렌더링의 기본적인 사용법을 익히�
 
 - [SceneKit](https://github.com/gaki2745/ARKit-Study/blob/master/Day1_ARTests/README.md)
 
-- ARFaceTrackingConfiguration
+- [ARFaceTracking](https://github.com/gaki2745/ARKit-Study/tree/master/EyeTracking)
 
 
 <br><br><br>
