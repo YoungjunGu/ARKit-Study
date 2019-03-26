@@ -115,7 +115,7 @@ AR 세션에서 이 모델을 사용자의 얼굴 모양을 따르는 컨텐츠�
 
 > 노트
 
-얼굴 메쉬 위상은 ARFaceGeometry 인스턴스(instance)에 걸쳐 일정하다. 즉, [vertexCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928206-vertexcount),[textureCoordinateCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928197-texturecoordinatecount) 및 [trianglecount의](https://developer.apple.com/documentation/arkit/arfacegeometry/2928207-trianglecount)의 값은 절대 변하지 않으며, [triangleIndices](https://developer.apple.com/documentation/arkit/arfacegeometry/2928199-triangleindices)버퍼는 항상 정점의 동일한 배치를 설명하며, 텍스쳐 좌표 버퍼는 항상 동일한 정점 지수를 동일한 질감 좌표에 매핑한다.
+얼굴 메쉬 위상은 ARFaceGeometry 인스턴스(instance)에 걸쳐 일정하다. 즉, [vertexCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928206-vertexcount),[textureCoordinateCount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928197-texturecoordinatecount) 및 [trianglecount](https://developer.apple.com/documentation/arkit/arfacegeometry/2928207-trianglecount)의 값은 절대 변하지 않으며, [triangleIndices](https://developer.apple.com/documentation/arkit/arfacegeometry/2928199-triangleindices)버퍼는 항상 정점의 동일한 배치를 설명하며, 텍스쳐 좌표 버퍼는 항상 동일한 정점 지수를 동일한 질감 좌표에 매핑한다.
 
 AR 세션에서 제공하는 얼굴 메쉬 간에 정점 버퍼만 변경되며, ARKit가 사용자 얼굴의 모양과 표현에 mesh를 적응시킬 때 vertex 위치의 변화를 나타낸다.
 
