@@ -142,6 +142,99 @@ class ARSCNFaceGeometry : SCNGeometry
 
 [`update(from:)`](https://developer.apple.com/documentation/arkit/arscnfacegeometry/2928196-update)메서드로 지오메트리를 수정하면 정점 지오메트리 소스의 내용만 변경되어 ARKit가 사용자 얼굴의 모양과 표현에 mesh를 적응시킴으로써 정점 위치의 차이를 나타낸다.
 
+<hr>
+
+## Adding a Mesh Mask
+
+
+전면 카메라를 실행 시키면 아이폰은 face tracking을 즉각적으로 실행하고 보이지 않지만 실행을 하고있다. 사용자의 얼굴을 추적하는 것을 시각화 하는 것이 가능하다. 여러개의 폴리곤 형태로 face mesh mask를 시각화 할 수 있다.
+
+
+```swift
+// 1
+extension ViewController: ARSCNViewDelegate {
+  // 2
+  func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    
+    // 3
+    guard let device = sceneView.device else {
+      return nil
+    }
+    
+    // 4
+    let faceGeometry = ARSCNFaceGeometry(device: device)
+    
+    // 5
+    let node = SCNNode(geometry: faceGeometry)
+    
+    // 6
+    node.geometry?.firstMaterial?.fillMode = .lines
+    
+    // 7
+    return node
+  }
+}
+```
+
+실행하기 전에 sceneViewdml  ARSCNView 델리게이트를 설정해주어야한다.
+
+
+```swift
+sceneView.delegate = self
+```
+
+
+1. ViewController에서 `ARSCNViewDelegate` 프로토콜을 채택한다.
+
+2. `renderer(_:nodefor:)` 메서드를 구현한다.
+
+3. 렌더링을 위해 Metal에서 지원이 되는 디바이스인지 체크해야한다.(iPhoneX 미만시 여기서 nil이 반환 된다)
+
+4. face geometry를 생성한다.
+
+5. 생성한 face geometry 기반으로 SceneKit Node를 생성한다.
+
+6. 시각화를 위해 geometry의 material을 `.line`으로 설정한다.
+
+7. SCNNode를 반환한다.
+
+
+## Updating the Mesh Mask
+
+위의 과정이 끝났으면 이제 얼굴의 feature를 찾는 작업을 해야한다. 눈을 깜빡이고 입을 벌리고 하는 등에 동작을 할때 아직까지는 mesh에 반영이 되지 않는다.
+아래의 ARSCNViewDelegate 메서드를 추가로 구현해주면 된다.
+
+
+```swift
+// 1
+func renderer(
+  _ renderer: SCNSceneRenderer, 
+  didUpdate node: SCNNode, 
+  for anchor: ARAnchor) {
+   
+  // 2
+  guard let faceAnchor = anchor as? ARFaceAnchor,
+    let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
+      return
+  }
+    
+  // 3
+  faceGeometry.update(from: faceAnchor.geometry)
+}
+```
+
+1. [`renderer(_:didUpdate:for:)`](https://developer.apple.com/documentation/arkit/arscnviewdelegate/2865799-renderer) 프로토콜 메서드를 추가한다. 해당 메서드는 SceneKit 노드의 속성이 해당 앵커의 현재 상태와 일치하도록 업데이트되었음을 알려주는 역할이다.
+
+2. anchor가 업데이트 되는 것이 `ARFaceAnchor`이고 faceGeometry 가 `ARSCNFaceGeometry`인지 보장이 되어야한다.
+
+3. faceGeometry를 업데이트 된 값의 ARFaceAnchor의 Geometry갑으로 업데이트 해준다.
+
+
+## Face Feature 제어하기
+
+
+
+
 
 
 
