@@ -230,13 +230,85 @@ func renderer(
 3. faceGeometry를 업데이트 된 값의 ARFaceAnchor의 Geometry갑으로 업데이트 해준다.
 
 
+<hr>
+
+
 ## Face Feature 제어하기
 
 
+얼굴의 각 feature(눈, 코, 입 등)를 제어하고 위에 이미지 등을 SNOW 앱처럼 제어하는 방법을 익혀보자.
 
 
+- 우선 String 을 UIImage로 바꾸는 작업을 하여 SCNPlane의 contents 값을 설정하기 위해 extension해준다.
 
 
+```swift
+extension String {
+  
+  func image() -> UIImage? {
+    
+    let size = CGSize(width: 20, height: 22)
+    
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    UIColor.clear.set()
+    
+    let rect = CGRect(origin: .zero, size: size)
+    UIRectFill(CGRect(origin: .zero, size: size))
+    
+    (self as AnyObject).draw(in: rect, withAttributes: [.font: UIFont.systemFont(ofSize: 15)])
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    
+    UIGraphicsEndImageContext()
+    
+    return image
+  }
+}
+```
+
+- 얼굴 feature 위에 입힐 이모지 배열을 선언한다.
+
+```swift
+  let noseOptions = ["👃", "🐽", "💧", " "]
+  let eyeOptions = ["👁", "🌕", "🌟", "🔥", "⚽️", "🔎", " "]
+  let mouthOptions = ["👄", "👅", "❤️", " "]
+  let hatOptions = ["🎓", "🎩", "🧢", "⛑", "👒", " "]
+```
+
+- feature의 node 이름과 indice 배열을 선어한다.
+
+```swift
+  let features = ["nose", "leftEye", "rightEye", "mouth", "hat"]
+  let featureIndices = [[9], [1064], [42], [24, 25], [20]]
+``` 
 
 
+`features` 배열은 얼굴 feature의 NODE 이름을 저장한 배열이고 `featureIndices` 배열은 ARFaceGeometry에서 해당 기능에 해당하는 정점 인덱스이다. 입의 경우에는 인덱스 값을 두개를 가진다. 열린 입의 경우에는 얼굴에 그려질 mesh mask의 구멍에 해당하기 때문에 윗 입술과 아랫입술의 평균값을 이용하는 것이 좋다 그렇기 때문에 두개의 인덱스를 가진다.
+
+> 참고
+위의 과정 처럼 입 눈 코 머리 등의 feature에 해당하는 vertex index를 우리가 하드코딩 방식으로 지정해서 사용 할 수 있는 것은 ARFaceGeometry에는 1220 개의 정점이 있고 또 그것을 알고 있기 때문에 명시적으로 지정하고 사용할 수 있다. 하지만 애플이 앞으로 해상도를 높이고 그에따라 정점이 많아지면 이런 것들이 보장 받을 수 없다 그렇기때문에 Apple의 [Vision](https://developer.apple.com/documentation/vision) 프레임워크를 사용하여 얼굴을 감지하고 머신러닝을 통해 ARFaceGeometry에서 feature에 해당하는 가장 가까운 vertex를 찾아내 매핑 해야한다.
+
+
+- `updateFeature(for:using)` 메서드 추가 : `renderer(didUpdate)` 메서드 등에서 feature의 변화에 따라 삽입한 node도 변화를 주기위한 메서드이다.
+
+```swift
+ func updateFeatures(for node: SCNNode, using anchor: ARFaceAnchor) {
+ 	// 1
+    for (feature, indices) in zip(features, featureIndices) {
+    
+   	  // 2
+      let child = node.childNode(withName: feature, recursively: false) as? EmojiNode
+      
+      // 3
+      let vertices = indices.map { anchor.geometry.vertices[$0] }
+      
+      // 4
+      child?.updatePosition(for: vertices)
+      
+      ....
+```
+
+1. 루프를 통해 상단에 정의된 node name 이 담김 features 와 정점 인덱스가 담긴 featureIndices 배열을 순차적으로 접근한다.
+
+2. 
 
