@@ -285,8 +285,11 @@ extension String {
 
 `features` 배열은 얼굴 feature의 NODE 이름을 저장한 배열이고 `featureIndices` 배열은 ARFaceGeometry에서 해당 기능에 해당하는 정점 인덱스이다. 입의 경우에는 인덱스 값을 두개를 가진다. 열린 입의 경우에는 얼굴에 그려질 mesh mask의 구멍에 해당하기 때문에 윗 입술과 아랫입술의 평균값을 이용하는 것이 좋다 그렇기 때문에 두개의 인덱스를 가진다.
 
-> 참고
-위의 과정 처럼 입 눈 코 머리 등의 feature에 해당하는 vertex index를 우리가 하드코딩 방식으로 지정해서 사용 할 수 있는 것은 ARFaceGeometry에는 1220 개의 정점이 있고 또 그것을 알고 있기 때문에 명시적으로 지정하고 사용할 수 있다. 하지만 애플이 앞으로 해상도를 높이고 그에따라 정점이 많아지면 이런 것들이 보장 받을 수 없다 그렇기때문에 Apple의 [Vision](https://developer.apple.com/documentation/vision) 프레임워크를 사용하여 얼굴을 감지하고 머신러닝을 통해 ARFaceGeometry에서 feature에 해당하는 가장 가까운 vertex를 찾아내 매핑 해야한다.
+
+- 노트
+
+> 위의 과정 처럼 입 눈 코 머리 등의 feature에 해당하는 vertex index를 우리가 하드코딩 방식으로 지정해서 사용 할 수 있는 것은 ARFaceGeometry에는 1220 개의 정점이 있고 또 그것을 알고 있기 때문에 명시적으로 지정하고 사용할 수 있다. 하지만 애플이 앞으로 해상도를 높이고 그에따라 정점이 많아지면 이런 것들이 보장 받을 수 없다 그렇기때문에 Apple의 [Vision](https://developer.apple.com/documentation/vision) 프레임워크를 사용하여 얼굴을 감지하고 머신러닝을 통해 ARFaceGeometry에서 feature에 해당하는 가장 가까운 vertex를 찾아내 매핑 해야한다.
+
 
 
 - `updateFeature(for:using)` 메서드 추가 : `renderer(didUpdate)` 메서드 등에서 feature의 변화에 따라 삽입한 node도 변화를 주기위한 메서드이다.
@@ -310,5 +313,58 @@ extension String {
 
 1. 루프를 통해 상단에 정의된 node name 이 담김 features 와 정점 인덱스가 담긴 featureIndices 배열을 순차적으로 접근한다.
 
-2. 
+2. 추가한 SCNNode 타입 클래스인 EmojiNode의 NODE를 생성한다.
+
+3. 받아온 ARFaceAnchor를 가져와 ARFaceGeometry 의속성의 vertice값에 featureIndice 배열의 정점 인덱배열을 매핑 시킨다.
+
+4. 매핑한 vertices 배열을 update 시켜준다.
+
+
+## Blend Shape Coefficients
+
+ARFaceGeometry는 얼굴의 geometry정보와 더불어 Blend Shape Coefficients값의 정보도 포함하고있다.
+**Blend Shape Coefficients**는 얼굴에 표시되는 표현의 양을 조절 할 수 있다. 계수의 값이고 계수의 범위는 0.0 (표현 없음)에서 1.0 (최대 표현)까지이다.
+
+현재 애플에서 52가지의 Blend Shape Coefficients 값을 사용할 수 있다. (참고:[공식문서](https://developer.apple.com/documentation/arkit/arfaceanchor/blendshapelocation))
+
+
+위의 Blend Shape Coefficients 값을 사용하여 사용자가 입을 벌리거나 눈을 깜빡 거릴때 입을 벌릴때 등 표현의 크기에 맞게 childNode의 scale에 변화를 주게 되면 역동적인 애니메이션을 적용할 수있다.
+
+
+```swift
+switch feature {
+	// 1
+	case "leftEye":
+    	// 2
+        let scaleX = child?.scale.x ?? 1.0
+        // 3
+        let eyeBlinkValue = anchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+        // 4
+        child?.scale = SCNVector3(scaleX, 1.0 - eyeBlinkValue, 1.0)
+```
+
+1. 해당 하는 feature 의 switch 문을 구성한다. (예제는 왼쪽 눈)
+
+2. 초기 child scale 값을 1.0 으로 설정 하면안된다.
+
+3. eyeBlinkLeft에 대한 Blend Shape Coefficients를 가져오고, 발견되지 않은 경우 기본값은 0.0 (깜박이지 않음)으로 설정 한다.
+
+4. Blend Shape Coefficients를 기반으로 SCNVector 의 NODE의 y scale 값도 조정 한다.
+
+
+- 그외 feature 에 대한 scale update
+
+```swift
+case "rightEye":
+        let scaleX = child?.scale.x ?? 1.0
+        let eyeBlinkValue = anchor.blendShapes[.eyeBlinkRight]?.floatValue ?? 0.0
+        child?.scale = SCNVector3(scaleX, 1.0 - eyeBlinkValue, 1.0)
+      case "mouth":
+        let jawOpenValue = anchor.blendShapes[.jawOpen]?.floatValue ?? 0.2
+        child?.scale = SCNVector3(1.0, 0.8 + jawOpenValue, 1.0)
+      default:
+        break
+```
+
+
 
