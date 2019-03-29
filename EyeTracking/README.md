@@ -239,7 +239,7 @@ func renderer(
 얼굴의 각 feature(눈, 코, 입 등)를 제어하고 위에 이미지 등을 SNOW 앱처럼 제어하는 방법을 익혀보자.
 
 
-- 우선 String 을 UIImage로 바꾸는 작업을 하여 SCNPlane의 contents 값을 설정하기 위해 extension해준다.
+- SCNPlane의 contents 값을 설정하기 위해 String 을 UIImage로 바꾸는 메서드를 extension하여 구현해야한다.
 
 
 ```swift
