@@ -1,3 +1,5 @@
+- AR Face Tracking Use ARKit
+- AR Eye Tracking Use ARKit
 
 # AR Face Tracking Use ARKit
 
@@ -366,5 +368,102 @@ case "rightEye":
         break
 ```
 
+<hr>
 
+
+# AR Eye Tracking Use ARKit
+
+- session configuration 을 생성하고 run 시킨다.
+
+```swift
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Create a session configuration
+        guard ARFaceTrackingConfiguration.isSupported else { return }
+        let configuration = ARFaceTrackingConfiguration()
+        configuration.isLightEstimationEnabled = true
+        
+        // Run the view's session
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    }
+```    
+
+
+- 얼굴노드및 왼쪽 눈과 오른쪽 눈을 위한 각각의 SCNNode를 우선 생성한다.
+
+```swift
+	var faceNode: SCNNode = SCNNode()
+    
+    var eyeLNode: SCNNode = {
+           // Geometry 생성
+        let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.2)
+        geometry.radialSegmentCount = 3
+        geometry.firstMaterial?.diffuse.contents = UIColor.blue
+        // Node 생성 후 Geometry 설정
+        let node = SCNNode()
+        node.geometry = geometry
+        // node 방향 설정
+        node.eulerAngles.x = -.pi / 2
+        node.position.z = 0.1
+        let parentNode = SCNNode()
+        parentNode.addChildNode(node)
+        return parentNode
+    }()
+    
+    var eyeRNode: SCNNode = {
+        let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.2)
+        geometry.radialSegmentCount = 3
+        geometry.firstMaterial?.diffuse.contents = UIColor.blue
+        let node = SCNNode()
+        node.geometry = geometry
+        node.eulerAngles.x = -.pi / 2
+        node.position.z = 0.1
+        let parentNode = SCNNode()
+        parentNode.addChildNode(node)
+        return parentNode
+    }()
+```
+
+- 두 눈에 face 위의 노드를 설정했고 화면에 타겟팅이 될 노드 즉 시선이 향하여 화면에 포인팅이 될 노드 또한 생성 해야한다
+
+```swift
+var lookAtTargetEyeLNode: SCNNode = SCNNode()
+var lookAtTargetEyeRNode: SCNNode = SCNNode()
+```
+
+- phoneNode 와 ScreenNode를 생성한다 
+
+```swift
+ var virtualPhoneNode: SCNNode = SCNNode()
+ var virtualScreenNode: SCNNode = {
+        
+        let screenGeometry = SCNPlane(width: 1, height: 1)
+        screenGeometry.firstMaterial?.isDoubleSided = true
+        screenGeometry.firstMaterial?.diffuse.contents = UIColor.green
+        
+        return SCNNode(geometry: screenGeometry)
+    }()
+```
+
+- Node 계층 구조
+
+```siwft
+	sceneView.scene.rootNode.addChildNode(faceNode)
+    sceneView.scene.rootNode.addChildNode(virtualPhoneNode)
+    virtualPhoneNode.addChildNode(virtualScreenNode)
+    faceNode.addChildNode(eyeLNode)
+    faceNode.addChildNode(eyeRNode)
+    eyeLNode.addChildNode(lookAtTargetEyeLNode)
+    eyeRNode.addChildNode(lookAtTargetEyeRNode)
+```
+
+- 그런다음 anchor가 변경 될때마다 update 해줄 callback 메서드를 추가한다 `update(_:ARFaceAnchor)`
+
+- 
+
+```swift
+  	eyeRNode.simdTransform = anchor.rightEyeTransform
+ 	eyeLNode.simdTransform = anchor.leftEyeTransform
+```    
 
