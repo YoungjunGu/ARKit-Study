@@ -1,4 +1,4 @@
-본 글은 [virakri/eye-tracking](https://github.com/virakri/eye-tracking-ios-prototype) 와 [raywenderlich ARKit tutorial](https://www.raywenderlich.com/5491-ar-face-tracking-tutorial-for-ios-getting-started) 의 내용을 참고하여 작성하였음을 밝힙니다.
+본 글은 [Apple Developer](https://developer.apple.com/documentation)를 기본참고로 [virakri/eye-tracking](https://github.com/virakri/eye-tracking-ios-prototype) 와 [raywenderlich ARKit tutorial](https://www.raywenderlich.com/5491-ar-face-tracking-tutorial-for-ios-getting-started)의 내용을 참고하여 작성하였음을 밝힙니다.
 
 - AR Face Tracking Use ARKit
 - AR Eye Tracking Use ARKit
