@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     
     var shapeNode = SCNNode()
@@ -42,11 +42,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
+    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let imageAnchor = anchor as? ARImageAnchor else {
+            return nil
+        }
         
-       return shapeNode
-        
+        switch imageAnchor.referenceImage.name {
+        case "RealityBook":
+            return shapeNode
+        default: return nil
+        }
     }
- 
+    
 }
