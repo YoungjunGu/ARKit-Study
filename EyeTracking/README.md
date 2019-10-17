@@ -462,7 +462,6 @@ var lookAtTargetEyeRNode: SCNNode = SCNNode()
 
 - 그런다음 anchor가 변경 될때마다 update 해줄 callback 메서드를 추가한다 `update(_:ARFaceAnchor)`
 
-- 
 
 ```swift
   	eyeRNode.simdTransform = anchor.rightEyeTransform
